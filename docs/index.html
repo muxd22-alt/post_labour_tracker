@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convergence Dashboard — Post-Labour Tracker</title>
+    <meta name="description" content="Mission control for tracking humanity's transition to a post-labour economy. Daily monitoring across 800 days.">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-void: #06060c;
+            --bg-primary: #0a0a12;
+            --bg-card: #0f1018;
+            --bg-card-hover: #141420;
+            --bg-elevated: #1a1a2e;
+            --bg-input: #12121e;
+            --text-primary: #e8e8f0;
+            --text-secondary: #7a7a9a;
+            --text-muted: #4a4a6a;
+            --text-dim: #2e2e4a;
+            --accent-threat: #ff3b5c;
+            --accent-threat-glow: rgba(255, 59, 92, 0.15);
+            --accent-hope: #00e5a0;
+            --accent-hope-glow: rgba(0, 229, 160, 0.12);
+            --accent-blue: #4d7cff;
+            --accent-purple: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --border: rgba(255,255,255,0.04);
+            --border-hover: rgba(255,255,255,0.08);
+            --glass: rgba(15,16,24,0.7);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-void);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background */
+        .ambient-bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background: radial-gradient(ellipse 80% 60% at 50% -10%, var(--ambient-color, rgba(77,124,255,0.06)), transparent),
+                        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(139,92,246,0.04), transparent);
+            transition: background 3s ease;
+        }
+
+        .ambient-bg::after {
+            content:''; position:absolute; inset:0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+
+        /* Layout */
+        .shell { position:relative; z-index:1; max-width:1360px; margin:0 auto; padding:24px 20px 80px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            text-align:center; padding:48px 24px 40px;
+            background: linear-gradient(180deg, rgba(77,124,255,0.03) 0%, transparent 100%);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+        .hero-phase {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:6px 16px; border-radius:40px;
+            background: rgba(77,124,255,0.08); border:1px solid rgba(77,124,255,0.15);
+            font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+            color: var(--accent-blue); margin-bottom:20px;
+        }
+        .hero-phase .phase-dot { width:6px;height:6px;border-radius:50%;background:var(--accent-blue); animation:phasePulse 2s ease infinite; }
+        @keyframes phasePulse { 0%,100%{opacity:1;box-shadow:0 0 4px var(--accent-blue)} 50%{opacity:.5;box-shadow:none} }
+
+        .hero-day {
+            font-family: var(--font-mono); font-size:72px; font-weight:700;
+            letter-spacing:-0.04em; line-height:1;
+            background: linear-gradient(180deg, var(--text-primary) 30%, var(--text-muted) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            margin-bottom:8px;
+        }
+        .hero-subtitle { color:var(--text-secondary); font-size:15px; font-weight:400; margin-bottom:6px; }
+        .hero-date { color:var(--text-muted); font-size:12px; font-family:var(--font-mono); font-weight:400; }
+
+        /* ===== GAUGE (SVG Radial) ===== */
+        .gauge-section {
+            background: var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-xl);
+            padding:36px 24px 28px; margin-bottom:24px; text-align:center;
+            position:relative; overflow:hidden;
+        }
+        .gauge-section::before {
+            content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+            width:300px; height:1px;
+            background: linear-gradient(90deg, transparent, rgba(77,124,255,0.3), transparent);
+        }
+        .gauge-label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-bottom:24px; }
+        .gauge-wrap { display:inline-block; position:relative; }
+        .gauge-svg { width:280px; height:160px; }
+        .gauge-score-wrap { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); text-align:center; }
+        .gauge-score { font-family:var(--font-mono); font-size:44px; font-weight:700; color:var(--text-primary); line-height:1; }
+        .gauge-score-label { font-size:11px; color:var(--text-secondary); margin-top:2px; }
+        .gauge-endpoints { display:flex; justify-content:space-between; max-width:300px; margin:12px auto 0; }
+        .gauge-endpoints span { font-size:10px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+        .gauge-endpoints .left { color: var(--accent-threat); }
+        .gauge-endpoints .right { color: var(--accent-hope); }
+
+        .status-pill {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:8px 18px; border-radius:40px; font-size:12px; font-weight:600;
+            margin-top:20px; letter-spacing:0.02em;
+        }
+        .status-pill.critical { background:var(--accent-threat-glow); color:var(--accent-threat); border:1px solid rgba(255,59,92,0.2); }
+        .status-pill.warning { background:rgba(245,158,11,0.1); color:var(--accent-amber); border:1px solid rgba(245,158,11,0.2); }
+        .status-pill.stable { background:var(--accent-hope-glow); color:var(--accent-hope); border:1px solid rgba(0,229,160,0.2); }
+        .status-dot { width:6px;height:6px;border-radius:50%;background:currentColor; animation:phasePulse 2s ease infinite; }
+
+        /* ===== GRID ===== */
+        .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px; }
+        .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:24px; }
+
+        /* ===== CARDS ===== */
+        .card {
+            background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg);
+            padding:24px; transition: border-color 0.3s ease, transform 0.2s ease;
+        }
+        .card:hover { border-color:var(--border-hover); }
+        .card-header { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+        .card-icon {
+            width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+            font-size:18px; flex-shrink:0;
+        }
+        .card-icon.threat { background:var(--accent-threat-glow); }
+        .card-icon.hope { background:var(--accent-hope-glow); }
+        .card-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+        .card-subtitle { font-size:12px; color:var(--text-muted); margin-top:1px; }
+
+        /* ===== STAT BLOCKS ===== */
+        .stat-block {
+            background:var(--bg-elevated); border-radius:var(--radius-md); padding:18px;
+            border:1px solid var(--border); margin-bottom:14px;
+        }
+        .stat-label { font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-bottom:8px; }
+        .stat-row { display:flex; align-items:baseline; gap:8px; }
+        .stat-value { font-family:var(--font-mono); font-size:28px; font-weight:700; line-height:1; }
+        .stat-value.threat { color:var(--accent-threat); }
+        .stat-value.hope { color:var(--accent-hope); }
+        .stat-value.blue { color:var(--accent-blue); }
+        .stat-unit { font-size:12px; color:var(--text-muted); }
+        .stat-bar { height:4px; background:var(--bg-card); border-radius:2px; margin-top:12px; overflow:hidden; }
+        .stat-bar-fill { height:100%; border-radius:2px; transition:width 0.8s cubic-bezier(.4,0,.2,1); }
+        .stat-bar-fill.threat { background: linear-gradient(90deg, var(--accent-threat), #ff6b81); }
+        .stat-bar-fill.hope { background: linear-gradient(90deg, var(--accent-hope), #34d399); }
+        .stat-bar-fill.blue { background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple)); }
+
+        /* Sparkline */
+        .sparkline-wrap { margin-top:10px; height:32px; }
+        .sparkline-wrap canvas { width:100%; height:100%; display:block; }
+
+        /* ===== PILLAR CHECKLIST ===== */
+        .pillar {
+            background:var(--bg-elevated); border-radius:var(--radius-md); padding:16px;
+            border:1px solid var(--border); cursor:pointer;
+            transition: all 0.2s ease; margin-bottom:10px;
+        }
+        .pillar:hover { border-color:var(--border-hover); background:var(--bg-card-hover); }
+        .pillar.done { border-color:rgba(0,229,160,0.2); background:rgba(0,229,160,0.04); }
+        .pillar-row { display:flex; align-items:center; gap:12px; }
+        .pillar-check {
+            width:20px;height:20px;border-radius:6px;border:2px solid var(--text-dim);
+            display:flex;align-items:center;justify-content:center;flex-shrink:0;
+            transition:all 0.2s ease; font-size:11px; color:transparent;
+        }
+        .pillar.done .pillar-check { background:var(--accent-hope); border-color:var(--accent-hope); color:#fff; }
+        .pillar-name { font-size:14px; font-weight:600; color:var(--text-primary); }
+        .pillar-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:10px; margin-left:32px; }
+        .pillar-tag {
+            font-size:10px; padding:3px 8px; border-radius:4px;
+            background:rgba(255,255,255,0.03); color:var(--text-muted); font-weight:500;
+        }
+        .pillar.done .pillar-tag { color:var(--accent-hope); background:rgba(0,229,160,0.08); }
+
+        /* ===== SIGNALS FEED ===== */
+        .feed-section { margin-bottom:24px; }
+        .feed-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+        .feed-title { font-size:13px; font-weight:600; color:var(--text-secondary); letter-spacing:0.03em; }
+        .feed-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+        .feed-col { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px; }
+        .feed-col-head { display:flex; align-items:center; gap:8px; margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+        .feed-col-head h3 { font-size:13px; font-weight:600; }
+        .feed-col.threat .feed-col-head { color:var(--accent-threat); }
+        .feed-col.hope .feed-col-head { color:var(--accent-hope); }
+        .feed-items { display:flex; flex-direction:column; gap:8px; max-height:260px; overflow-y:auto; }
+
+        .feed-item {
+            background:var(--bg-elevated); border-radius:var(--radius-sm); padding:12px;
+            border:1px solid var(--border); transition:all 0.2s ease; cursor:pointer;
+        }
+        .feed-item:hover { border-color:var(--border-hover); background:var(--bg-card-hover); }
+        .feed-item-title { font-size:12px; font-weight:500; color:var(--text-primary); line-height:1.5; margin-bottom:4px; }
+        .feed-item-meta { font-size:10px; color:var(--text-muted); display:flex; justify-content:space-between; }
+
+        /* ===== JOURNAL ===== */
+        .journal {
+            background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-xl);
+            padding:28px; margin-bottom:24px;
+        }
+        .journal-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+        .journal-head h2 { font-size:16px; font-weight:600; }
+        .journal-count { font-size:11px; color:var(--text-muted); font-family:var(--font-mono); }
+        .journal-input {
+            width:100%; background:var(--bg-input); border:1px solid var(--border); border-radius:var(--radius-md);
+            padding:14px 16px; color:var(--text-primary); font-family:var(--font-sans); font-size:13px;
+            resize:vertical; min-height:70px; line-height:1.6; transition: border-color 0.2s;
+        }
+        .journal-input:focus { outline:none; border-color:rgba(77,124,255,0.3); }
+        .journal-input::placeholder { color:var(--text-dim); }
+        .journal-actions { display:flex; justify-content:flex-end; margin-top:10px; }
+        .btn {
+            padding:8px 20px; border-radius:var(--radius-sm); border:none;
+            font-family:var(--font-sans); font-size:12px; font-weight:600; cursor:pointer;
+            transition:all 0.2s ease;
+        }
+        .btn-primary { background:var(--accent-blue); color:#fff; }
+        .btn-primary:hover { background:#3d6de5; }
+        .btn-ghost { background:transparent; color:var(--text-secondary); border:1px solid var(--border); }
+        .btn-ghost:hover { border-color:var(--border-hover); color:var(--text-primary); }
+
+        .journal-entries { margin-top:16px; display:flex; flex-direction:column; gap:8px; max-height:300px; overflow-y:auto; }
+        .journal-entry {
+            background:var(--bg-elevated); border-radius:var(--radius-sm); padding:12px 14px;
+            border:1px solid var(--border);
+        }
+        .journal-entry-date { font-size:10px; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:4px; }
+        .journal-entry-text { font-size:13px; color:var(--text-secondary); line-height:1.6; }
+
+        /* ===== MILESTONES ===== */
+        .milestones {
+            background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-xl);
+            padding:28px; margin-bottom:24px;
+        }
+        .milestones h2 { font-size:16px; font-weight:600; margin-bottom:4px; }
+        .milestones>p { font-size:12px; color:var(--text-muted); margin-bottom:16px; }
+        .ms-input-row { display:flex; gap:8px; margin-bottom:14px; }
+        .ms-input {
+            flex:1; background:var(--bg-input); border:1px solid var(--border); border-radius:var(--radius-sm);
+            padding:10px 14px; color:var(--text-primary); font-family:var(--font-sans); font-size:13px;
+        }
+        .ms-input:focus { outline:none; border-color:rgba(77,124,255,0.3); }
+        .ms-input::placeholder { color:var(--text-dim); }
+        .ms-list { display:flex; flex-direction:column; gap:6px; }
+        .ms-item {
+            display:flex; align-items:center; gap:10px; padding:10px 12px;
+            background:var(--bg-elevated); border-radius:var(--radius-sm); border:1px solid var(--border);
+        }
+        .ms-item.done .ms-text { text-decoration:line-through; color:var(--text-dim); }
+        .ms-check {
+            width:18px;height:18px;border-radius:5px;border:2px solid var(--text-dim);
+            display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;
+            transition:all 0.2s; font-size:10px; color:transparent;
+        }
+        .ms-item.done .ms-check { background:var(--accent-hope); border-color:var(--accent-hope); color:#fff; }
+        .ms-text { flex:1; font-size:13px; color:var(--text-secondary); }
+        .ms-del {
+            background:none; border:none; color:var(--text-dim); cursor:pointer; font-size:14px;
+            padding:4px; border-radius:4px; transition:all 0.2s;
+        }
+        .ms-del:hover { color:var(--accent-threat); background:var(--accent-threat-glow); }
+
+        /* ===== FOOTER ===== */
+        .footer { text-align:center; padding:32px 0; border-top:1px solid var(--border); margin-top:16px; }
+        .footer p { font-size:11px; color:var(--text-dim); }
+
+        /* ===== REFRESH BTN ===== */
+        .refresh-btn {
+            background:var(--bg-elevated); border:1px solid var(--border); color:var(--text-muted);
+            padding:5px 12px; border-radius:6px; cursor:pointer; font-size:11px; font-weight:500;
+            font-family:var(--font-sans); transition:all 0.2s;
+        }
+        .refresh-btn:hover { border-color:var(--border-hover); color:var(--text-secondary); }
+
+        /* ===== LOADING ===== */
+        .loading { display:flex;align-items:center;justify-content:center;padding:20px;color:var(--text-muted);font-size:12px; }
+        .loading::before {
+            content:'';width:14px;height:14px;border:2px solid var(--border);border-top-color:var(--accent-blue);
+            border-radius:50%;margin-right:8px;animation:spin .7s linear infinite;
+        }
+        @keyframes spin { to{transform:rotate(360deg)} }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width:5px; }
+        ::-webkit-scrollbar-track { background:transparent; }
+        ::-webkit-scrollbar-thumb { background:var(--text-dim); border-radius:3px; }
+        ::-webkit-scrollbar-thumb:hover { background:var(--text-muted); }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:900px) {
+            .grid-2, .feed-grid { grid-template-columns:1fr; }
+            .grid-3 { grid-template-columns:1fr; }
+            .hero-day { font-size:48px; }
+        }
+        @media(max-width:600px) {
+            .shell { padding:12px 12px 60px; }
+            .hero { padding:32px 16px; }
+            .hero-day { font-size:36px; }
+            .gauge-svg { width:220px; height:130px; }
+        }
+
+        /* Entry animation */
+        .card, .gauge-section, .journal, .milestones, .feed-col, .ai-section { 
+            animation: fadeUp 0.5s ease both; 
+        }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+        /* ===== AI INSIGHTS ===== */
+        .ai-section {
+            background: var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-xl);
+            padding:28px; margin-bottom:24px; position:relative; overflow:hidden;
+        }
+        .ai-section::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:1px;
+            background: linear-gradient(90deg, transparent, var(--accent-purple), var(--accent-blue), transparent);
+        }
+        .ai-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+        .ai-head h2 { font-size:16px; font-weight:600; display:flex; align-items:center; gap:10px; }
+        .ai-badge {
+            font-size:9px; padding:3px 8px; border-radius:10px;
+            background:rgba(139,92,246,0.12); color:var(--accent-purple); border:1px solid rgba(139,92,246,0.2);
+            font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+        }
+        .ai-content {
+            background:var(--bg-elevated); border-radius:var(--radius-md); padding:20px;
+            border:1px solid var(--border); min-height:80px;
+            font-size:13px; color:var(--text-secondary); line-height:1.8;
+            white-space:pre-wrap;
+        }
+        .ai-content.loading-ai {
+            display:flex; align-items:center; justify-content:center; color:var(--text-muted);
+        }
+        .ai-content.loading-ai::before {
+            content:''; width:14px; height:14px; border:2px solid var(--border);
+            border-top-color:var(--accent-purple); border-radius:50%; margin-right:10px;
+            animation:spin .7s linear infinite;
+        }
+        .ai-meta { display:flex; justify-content:space-between; align-items:center; margin-top:12px; }
+        .ai-model-tag { font-size:10px; color:var(--text-dim); font-family:var(--font-mono); }
+        .ai-timestamp { font-size:10px; color:var(--text-dim); font-family:var(--font-mono); }
+
+        /* ===== SETTINGS MODAL ===== */
+        .settings-overlay {
+            position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px);
+            display:none; align-items:center; justify-content:center;
+        }
+        .settings-overlay.open { display:flex; }
+        .settings-modal {
+            background:var(--bg-card); border:1px solid var(--border-hover); border-radius:var(--radius-xl);
+            padding:32px; max-width:480px; width:90%; max-height:80vh; overflow-y:auto;
+        }
+        .settings-modal h2 { font-size:18px; font-weight:700; margin-bottom:4px; }
+        .settings-modal>p { font-size:12px; color:var(--text-muted); margin-bottom:20px; }
+        .setting-group { margin-bottom:18px; }
+        .setting-label { font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-bottom:6px; }
+        .setting-input {
+            width:100%; background:var(--bg-input); border:1px solid var(--border); border-radius:var(--radius-sm);
+            padding:10px 14px; color:var(--text-primary); font-family:var(--font-mono); font-size:12px;
+        }
+        .setting-input:focus { outline:none; border-color:rgba(77,124,255,0.3); }
+        .setting-input::placeholder { color:var(--text-dim); }
+        .setting-hint { font-size:10px; color:var(--text-dim); margin-top:4px; }
+        .settings-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:20px; }
+        .settings-btn {
+            padding:6px 14px; border-radius:20px; font-size:11px; font-weight:600; cursor:pointer;
+            border:none; font-family:var(--font-sans); background:transparent; color:var(--text-muted);
+        }
+        .settings-btn:hover { color:var(--text-primary); }
+
+        /* Settings gear icon */
+        .gear-btn {
+            position:fixed; top:20px; right:20px; z-index:50;
+            width:36px; height:36px; border-radius:10px;
+            background:var(--bg-card); border:1px solid var(--border); color:var(--text-muted);
+            display:flex; align-items:center; justify-content:center;
+            cursor:pointer; font-size:16px; transition:all 0.2s;
+        }
+        .gear-btn:hover { border-color:var(--border-hover); color:var(--text-secondary); transform:rotate(30deg); }
+
+        /* News source badge */
+        .source-badge {
+            font-size:9px; padding:2px 6px; border-radius:3px;
+            background:rgba(77,124,255,0.08); color:var(--accent-blue); font-weight:600;
+            text-transform:uppercase; letter-spacing:0.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-bg" id="ambientBg"></div>
+
+    <!-- SETTINGS GEAR -->
+    <button class="gear-btn" onclick="toggleSettings()" title="Settings">⚙</button>
+
+    <!-- SETTINGS MODAL -->
+    <div class="settings-overlay" id="settingsOverlay" onclick="if(event.target===this)toggleSettings()">
+        <div class="settings-modal">
+            <h2>⚙ Configuration</h2>
+            <p>API keys are stored locally in your browser. Never shared.</p>
+            <div class="setting-group">
+                <div class="setting-label">OpenRouter API Key</div>
+                <input class="setting-input" id="cfgOpenRouter" type="password" placeholder="sk-or-v1-...">
+                <div class="setting-hint">Free at openrouter.ai — powers AI signal analysis</div>
+            </div>
+            <div class="setting-group">
+                <div class="setting-label">GNews API Key (optional)</div>
+                <input class="setting-input" id="cfgGNews" type="password" placeholder="your-gnews-api-key">
+                <div class="setting-hint">Free at gnews.io — 100 requests/day for live news</div>
+            </div>
+            <div class="settings-actions">
+                <button class="settings-btn" onclick="toggleSettings()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveSettings()">Save Keys</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="shell">
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-phase"><span class="phase-dot"></span><span id="phaseName">Phase 1 — Dawn</span></div>
+            <div class="hero-day">Day <span id="dayCount">1</span></div>
+            <p class="hero-subtitle">of the Post-Labour Transition</p>
+            <p class="hero-date" id="heroDate"></p>
+        </header>
+
+        <!-- GAUGE -->
+        <section class="gauge-section">
+            <div class="gauge-label">Convergence Stability Index</div>
+            <div class="gauge-wrap">
+                <svg class="gauge-svg" viewBox="0 0 280 160" id="gaugeSvg">
+                    <defs>
+                        <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#ff3b5c"/>
+                            <stop offset="35%" stop-color="#f59e0b"/>
+                            <stop offset="65%" stop-color="#4d7cff"/>
+                            <stop offset="100%" stop-color="#00e5a0"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Track -->
+                    <path d="M 30 145 A 120 120 0 0 1 250 145" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="10" stroke-linecap="round"/>
+                    <!-- Fill -->
+                    <path id="gaugeFill" d="M 30 145 A 120 120 0 0 1 250 145" fill="none" stroke="url(#gaugeGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="345" stroke-dashoffset="345"/>
+                    <!-- Needle -->
+                    <line id="gaugeNeedle" x1="140" y1="145" x2="140" y2="40" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+                    <circle cx="140" cy="145" r="5" fill="var(--bg-elevated)" stroke="var(--text-dim)" stroke-width="2"/>
+                </svg>
+                <div class="gauge-score-wrap">
+                    <div class="gauge-score" id="gaugeScoreEl">50</div>
+                    <div class="gauge-score-label">stability</div>
+                </div>
+            </div>
+            <div class="gauge-endpoints"><span class="left">Collapse Risk</span><span class="right">Abundance Path</span></div>
+            <div style="text-align:center">
+                <span class="status-pill" id="statusPill"><span class="status-dot"></span><span id="statusLabel">Monitoring</span></span>
+            </div>
+        </section>
+
+        <!-- TWO FORCES -->
+        <div class="grid-2">
+            <!-- Obsolescence Force -->
+            <div class="card" style="animation-delay:0.1s">
+                <div class="card-header">
+                    <div class="card-icon threat">⚡</div>
+                    <div><div class="card-title">Obsolescence Pressure</div><div class="card-subtitle">Emad Mostaque's thesis — AI replaces cognitive labour</div></div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-label">Agentic Capability Index</div>
+                    <div class="stat-row"><span class="stat-value threat" id="agenticVal">0%</span></div>
+                    <div class="stat-bar"><div class="stat-bar-fill threat" id="agenticBar" style="width:0%"></div></div>
+                    <div class="sparkline-wrap"><canvas id="agenticSparkline"></canvas></div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-label">Days Since Predicted Threshold (Mar 31 2026)</div>
+                    <div class="stat-row">
+                        <span class="stat-value threat" id="daysSinceThreshold">0</span>
+                        <span class="stat-unit">days past</span>
+                    </div>
+                </div>
+                <div style="margin-top:14px">
+                    <div class="feed-header"><span class="feed-title">⚠ Threat Signals</span><button class="refresh-btn" onclick="fetchThreatFeed()">Refresh</button></div>
+                    <div class="feed-items" id="threatFeed"><div class="loading">Scanning…</div></div>
+                </div>
+            </div>
+
+            <!-- Abundance Force -->
+            <div class="card" style="animation-delay:0.2s">
+                <div class="card-header">
+                    <div class="card-icon hope">🛡️</div>
+                    <div><div class="card-title">UHI Readiness</div><div class="card-subtitle">David Shapiro's framework — the safety net</div></div>
+                </div>
+                <div id="pillarList">
+                    <div class="pillar" onclick="togglePillar('capital')" id="p-capital">
+                        <div class="pillar-row"><div class="pillar-check">✓</div><span class="pillar-name">Capital</span></div>
+                        <div class="pillar-tags"><span class="pillar-tag">Sovereign Wealth</span><span class="pillar-tag">ESOPs</span><span class="pillar-tag">Baby Bonds</span></div>
+                    </div>
+                    <div class="pillar" onclick="togglePillar('transfers')" id="p-transfers">
+                        <div class="pillar-row"><div class="pillar-check">✓</div><span class="pillar-name">Transfers</span></div>
+                        <div class="pillar-tags"><span class="pillar-tag">UBI</span><span class="pillar-tag">Social Security</span><span class="pillar-tag">Carbon Dividends</span></div>
+                    </div>
+                    <div class="pillar" onclick="togglePillar('wages')" id="p-wages">
+                        <div class="pillar-row"><div class="pillar-check">✓</div><span class="pillar-name">Wages</span></div>
+                        <div class="pillar-tags"><span class="pillar-tag">Human-Centric Labour</span><span class="pillar-tag">Residual Income</span></div>
+                    </div>
+                </div>
+                <div class="stat-block" style="margin-top:14px">
+                    <div class="stat-label">UHI Readiness Score</div>
+                    <div class="stat-row"><span class="stat-value hope" id="uhiVal">0%</span></div>
+                    <div class="stat-bar"><div class="stat-bar-fill hope" id="uhiBar" style="width:0%"></div></div>
+                </div>
+                <div style="margin-top:14px">
+                    <div class="feed-header"><span class="feed-title">✦ Hope Signals</span><button class="refresh-btn" onclick="fetchHopeFeed()">Refresh</button></div>
+                    <div class="feed-items" id="hopeFeed"><div class="loading">Scanning…</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAILY SIGNALS -->
+        <section class="feed-section">
+            <div class="feed-header"><span class="feed-title" style="font-size:15px;color:var(--text-primary)">Daily Signal Board</span><button class="refresh-btn" onclick="fetchDailySignals()">Refresh All</button></div>
+            <div class="feed-grid">
+                <div class="feed-col threat">
+                    <div class="feed-col-head"><span>⚠️</span><h3>Signals of Obsolescence</h3></div>
+                    <div class="feed-items" id="obsFeed"><div class="loading">Fetching…</div></div>
+                </div>
+                <div class="feed-col hope">
+                    <div class="feed-col-head"><span>✦</span><h3>Signals of Abundance</h3></div>
+                    <div class="feed-items" id="abuFeed"><div class="loading">Fetching…</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI INSIGHTS -->
+        <section class="ai-section">
+            <div class="ai-head">
+                <h2>🧠 AI Daily Analysis <span class="ai-badge">Qwen 3</span></h2>
+                <button class="refresh-btn" onclick="runAIAnalysis()" id="aiRefreshBtn">Generate Insight</button>
+            </div>
+            <div class="ai-content" id="aiContent">Configure your OpenRouter API key in ⚙ Settings, then click "Generate Insight" to get AI-powered analysis of today's signals.</div>
+            <div class="ai-meta">
+                <span class="ai-model-tag" id="aiModelTag">qwen/qwen3-235b-a22b:free</span>
+                <span class="ai-timestamp" id="aiTimestamp"></span>
+            </div>
+        </section>
+
+        <!-- JOURNAL -->
+        <section class="journal">
+            <div class="journal-head">
+                <h2>Daily Log</h2>
+                <span class="journal-count" id="journalCount">0 entries</span>
+            </div>
+            <textarea class="journal-input" id="journalInput" placeholder="What did you observe today? How is the transition unfolding?"></textarea>
+            <div class="journal-actions"><button class="btn btn-primary" onclick="addJournalEntry()">Save Entry</button></div>
+            <div class="journal-entries" id="journalEntries"></div>
+        </section>
+
+        <!-- MILESTONES -->
+        <section class="milestones">
+            <h2>Milestone Tracker</h2>
+            <p>Mark milestones you observe. Completed milestones shift stability toward abundance.</p>
+            <div class="ms-input-row">
+                <input class="ms-input" id="msInput" placeholder="e.g. New sovereign wealth fund announced…">
+                <button class="btn btn-primary" onclick="addMilestone()">Add</button>
+            </div>
+            <div class="ms-list" id="msList"></div>
+        </section>
+
+        <footer class="footer"><p>Convergence Dashboard — Tracking the post-labour transition · Built for the long arc</p></footer>
+    </div>
+
+<script>
+// ======= CONFIG =======
+const ERA_START = new Date('2026-03-31T00:00:00');
+const TOTAL_DAYS = 800;
+const PHASES = [
+    { name: 'Dawn', maxDay: 100, color: 'rgba(77,124,255,0.06)' },
+    { name: 'Acceleration', maxDay: 250, color: 'rgba(139,92,246,0.06)' },
+    { name: 'Turbulence', maxDay: 450, color: 'rgba(245,158,11,0.06)' },
+    { name: 'Emergence', maxDay: 650, color: 'rgba(0,229,160,0.05)' },
+    { name: 'Convergence', maxDay: 800, color: 'rgba(0,229,160,0.08)' }
+];
+
+const RSS_PROXY = 'https://api.rss2json.com/api.json?rss_url=';
+const FEEDS = {
+    threat: 'https://techcrunch.com/category/artificial-intelligence/feed/',
+    hope: 'https://news.mit.edu/topic/mitartificial-intelligence2-news',
+    obsSignals: 'https://www.theverge.com/rss/ai/index.xml',
+    abuSignals: 'https://www.reutersagency.com/feed/?best-topics=tech-post&post_type=best'
+};
+const THREAT_TERMS = ['agent','autonomous','robot','automat','replac','layoff','workforce','benchmark','humanoid','llm','obsolete'];
+const HOPE_TERMS = ['ubi','universal basic','wealth fund','esop','ownership','carbon dividend','safety net','post-scarcity','income'];
+
+// OpenRouter config
+const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
+const AI_MODEL = 'qwen/qwen3-235b-a22b:free';
+
+// GNews config
+const GNEWS_BASE = 'https://gnews.io/api/v4/search';
+
+// ======= STATE =======
+let state = loadState();
+let apiKeys = loadKeys();
+let collectedHeadlines = { threat: [], hope: [] }; // collected from all sources for AI
+
+function defaultState() {
+    return { pillars:{capital:false,transfers:false,wages:false}, milestones:[], journal:[], history:[], agenticScore:45, lastAI:null, lastAIText:'' };
+}
+function loadState() {
+    try { const s = JSON.parse(localStorage.getItem('convergeDash_v2')); return s ? {...defaultState(),...s} : defaultState(); }
+    catch { return defaultState(); }
+}
+function saveState() { localStorage.setItem('convergeDash_v2', JSON.stringify(state)); }
+
+function loadKeys() {
+    try { return JSON.parse(localStorage.getItem('convergeDash_keys')) || {}; }
+    catch { return {}; }
+}
+function saveKeys(keys) { localStorage.setItem('convergeDash_keys', JSON.stringify(keys)); }
+
+// ======= SETTINGS =======
+function toggleSettings() {
+    const o = document.getElementById('settingsOverlay');
+    o.classList.toggle('open');
+    if (o.classList.contains('open')) {
+        document.getElementById('cfgOpenRouter').value = apiKeys.openrouter || '';
+        document.getElementById('cfgGNews').value = apiKeys.gnews || '';
+    }
+}
+function saveSettings() {
+    apiKeys = {
+        openrouter: document.getElementById('cfgOpenRouter').value.trim(),
+        gnews: document.getElementById('cfgGNews').value.trim()
+    };
+    saveKeys(apiKeys);
+    toggleSettings();
+    // Re-fetch with new keys
+    fetchDailySignals();
+    fetchThreatFeed();
+    fetchHopeFeed();
+}
+
+// ======= INIT =======
+document.addEventListener('DOMContentLoaded', () => {
+    updateHero();
+    updateGauge();
+    updateAgentic();
+    updateUHI();
+    restorePillars();
+    renderMilestones();
+    renderJournal();
+    restoreLastAI();
+    fetchAllFeeds();
+    recordDailySnapshot();
+    drawSparkline();
+    setInterval(updateHero, 60000);
+    setInterval(fetchAllFeeds, 300000);
+});
+
+async function fetchAllFeeds() {
+    collectedHeadlines = { threat: [], hope: [] };
+    await Promise.all([fetchThreatFeed(), fetchHopeFeed(), fetchGNews()]);
+    fetchDailySignals();
+}
+
+// ======= HERO =======
+function updateHero() {
+    const now = new Date();
+    const diff = now - ERA_START;
+    const day = Math.max(1, Math.ceil(diff / 86400000));
+    document.getElementById('dayCount').textContent = day;
+    document.getElementById('heroDate').textContent = now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    // phase
+    const phase = PHASES.find(p => day <= p.maxDay) || PHASES[PHASES.length-1];
+    const idx = PHASES.indexOf(phase)+1;
+    document.getElementById('phaseName').textContent = `Phase ${idx} — ${phase.name}`;
+    document.getElementById('ambientBg').style.setProperty('--ambient-color', phase.color);
+    // days since threshold
+    const dst = Math.max(0, Math.floor(diff/86400000));
+    document.getElementById('daysSinceThreshold').textContent = dst;
+}
+
+// ======= GAUGE =======
+function calcStability() {
+    const uhi = (Object.values(state.pillars).filter(Boolean).length / 3)*100;
+    const ms = state.milestones.filter(m=>m.done).length * 5;
+    return Math.max(0, Math.min(100, uhi - (state.agenticScore - 50) + ms));
+}
+
+function updateGauge() {
+    const score = calcStability();
+    const el = document.getElementById('gaugeFill');
+    const needle = document.getElementById('gaugeNeedle');
+    const scoreEl = document.getElementById('gaugeScoreEl');
+    const pill = document.getElementById('statusPill');
+    const label = document.getElementById('statusLabel');
+
+    // dashoffset: 345 = full hidden, 0 = full shown
+    const offset = 345 - (345 * score / 100);
+    el.style.strokeDashoffset = offset;
+
+    // needle rotation: -85deg (left) to +85deg (right)
+    const angle = -85 + (170 * score / 100);
+    needle.setAttribute('transform', `rotate(${angle} 140 145)`);
+
+    scoreEl.textContent = Math.round(score);
+
+    if (score < 30) { pill.className='status-pill critical'; label.textContent='Critical — Collapse Risk'; }
+    else if (score < 50) { pill.className='status-pill warning'; label.textContent='Warning — Transition Stress'; }
+    else if (score < 70) { pill.className='status-pill stable'; label.textContent='Stable — Managed Transition'; }
+    else { pill.className='status-pill stable'; label.textContent='Optimal — Abundance Path'; }
+}
+
+// ======= AGENTIC SCORE =======
+function updateAgentic() {
+    const startDate = new Date('2024-01-01');
+    const now = new Date();
+    const total = (ERA_START - startDate) / 86400000;
+    const elapsed = (now - startDate) / 86400000;
+    const p = Math.min(1, elapsed / total);
+    state.agenticScore = Math.round(100 / (1 + Math.exp(-5*(p-0.5))));
+    document.getElementById('agenticVal').textContent = state.agenticScore + '%';
+    document.getElementById('agenticBar').style.width = state.agenticScore + '%';
+    saveState();
+    updateGauge();
+}
+
+// ======= UHI =======
+function updateUHI() {
+    const score = Math.round((Object.values(state.pillars).filter(Boolean).length/3)*100);
+    document.getElementById('uhiVal').textContent = score+'%';
+    document.getElementById('uhiBar').style.width = score+'%';
+    updateGauge();
+}
+function restorePillars() {
+    Object.entries(state.pillars).forEach(([k,v])=>{ if(v) document.getElementById('p-'+k)?.classList.add('done'); });
+}
+function togglePillar(id) {
+    state.pillars[id] = !state.pillars[id];
+    document.getElementById('p-'+id).classList.toggle('done', state.pillars[id]);
+    saveState(); updateUHI();
+}
+
+// ======= RSS + NEWS FETCHING =======
+async function fetchFeed(url, terms, container, fallback, collectAs) {
+    if (container) container.innerHTML = '<div class="loading">Scanning…</div>';
+    try {
+        const r = await fetch(RSS_PROXY + encodeURIComponent(url));
+        const d = await r.json();
+        if (d.status==='ok') {
+            const items = d.items.filter(i => terms.some(t => (i.title+' '+(i.description||'')).toLowerCase().includes(t))).slice(0,6);
+            if (items.length) {
+                if (container) renderFeedItems(container, items, 'rss');
+                if (collectAs) items.forEach(i => collectedHeadlines[collectAs].push(i.title));
+                return items;
+            }
+        }
+        throw 0;
+    } catch {
+        if (container) renderFeedItems(container, fallback, 'demo');
+        if (collectAs) fallback.forEach(i => collectedHeadlines[collectAs].push(i.title));
+        return fallback;
+    }
+}
+
+function renderFeedItems(container, items, src) {
+    if (!items.length) { container.innerHTML='<div class="loading">No matching signals</div>'; return; }
+    container.innerHTML = items.map(i => {
+        const badge = src === 'gnews' ? '<span class="source-badge">GNews</span> ' : (src === 'rss' ? '<span class="source-badge">RSS</span> ' : '');
+        return `<div class="feed-item" onclick="markSignal('${esc(i.title)}')">
+            <div class="feed-item-title">${badge}${esc(i.title)}</div>
+            <div class="feed-item-meta"><span>${i.pubDate?new Date(i.pubDate).toLocaleDateString():i.source||''}</span></div>
+        </div>`;
+    }).join('');
+}
+
+async function fetchThreatFeed() {
+    await fetchFeed(FEEDS.threat, THREAT_TERMS, document.getElementById('threatFeed'), [
+        {title:'AI Agent Framework Achieves Human-Level on SWE-Bench',pubDate:new Date()},
+        {title:'Humanoid Robot Startup Raises $500M for Factory Automation',pubDate:new Date()},
+        {title:'Autonomous Agents Now Handle 30% of Development Tasks',pubDate:new Date()},
+        {title:'LLM Reasoning Benchmark Shows 40% Year-over-Year Improvement',pubDate:new Date()}
+    ], 'threat');
+}
+async function fetchHopeFeed() {
+    await fetchFeed(FEEDS.hope, HOPE_TERMS, document.getElementById('hopeFeed'), [
+        {title:'Norway Wealth Fund Announces AI-Era Investment Strategy',pubDate:new Date()},
+        {title:'California UBI Pilot Shows Measurable Poverty Reduction',pubDate:new Date()},
+        {title:'Employee Ownership Models See Record Adoption in Tech',pubDate:new Date()},
+        {title:'Carbon Dividend Program Expands to 12 Additional States',pubDate:new Date()}
+    ], 'hope');
+}
+function fetchDailySignals() {
+    fetchFeed(FEEDS.obsSignals, ['layoff','replac','automat','cut','AI productiv','workforce reduc','efficien'], document.getElementById('obsFeed'), [
+        {title:'Major Tech Firm Announces 15% Workforce Reduction',source:'TechCrunch'},
+        {title:'AI Tool Replaces Entire Customer Service Department',source:'The Verge'},
+        {title:'White-Collar Jobs Most at Risk from Agentic AI',source:'Bloomberg'}
+    ], 'threat');
+    fetchFeed(FEEDS.abuSignals, ['ubi','wealth fund','carbon','energy','sovereign','universal income','post-scarcity'], document.getElementById('abuFeed'), [
+        {title:'New Sovereign Wealth Fund Targets AI-Era Inequality',source:'Reuters'},
+        {title:'UBI Pilot Launches in 5 Major Cities',source:'NPR'},
+        {title:'Breakthrough in Fusion Energy Cost Reduction Announced',source:'Nature'}
+    ], 'hope');
+}
+
+// ======= GNEWS API =======
+async function fetchGNews() {
+    if (!apiKeys.gnews) return;
+    try {
+        // Fetch AI/automation threat news
+        const threatUrl = `${GNEWS_BASE}?q=AI+automation+jobs&lang=en&max=5&apikey=${apiKeys.gnews}`;
+        const tr = await fetch(threatUrl);
+        const td = await tr.json();
+        if (td.articles) {
+            const existing = document.getElementById('threatFeed');
+            const items = td.articles.map(a => ({title:a.title, pubDate:a.publishedAt, source:a.source?.name||'GNews'}));
+            items.forEach(i => collectedHeadlines.threat.push(i.title));
+            // Append to existing feed
+            const prev = existing.innerHTML;
+            const newHtml = items.slice(0,3).map(i => `<div class="feed-item" onclick="markSignal('${esc(i.title)}')">
+                <div class="feed-item-title"><span class="source-badge">GNews</span> ${esc(i.title)}</div>
+                <div class="feed-item-meta"><span>${new Date(i.pubDate).toLocaleDateString()}</span><span>${esc(i.source)}</span></div>
+            </div>`).join('');
+            existing.innerHTML = prev + newHtml;
+        }
+
+        // Fetch UBI/safety-net hope news
+        const hopeUrl = `${GNEWS_BASE}?q=universal+basic+income+OR+sovereign+wealth+fund&lang=en&max=5&apikey=${apiKeys.gnews}`;
+        const hr = await fetch(hopeUrl);
+        const hd = await hr.json();
+        if (hd.articles) {
+            const existing = document.getElementById('hopeFeed');
+            const items = hd.articles.map(a => ({title:a.title, pubDate:a.publishedAt, source:a.source?.name||'GNews'}));
+            items.forEach(i => collectedHeadlines.hope.push(i.title));
+            const prev = existing.innerHTML;
+            const newHtml = items.slice(0,3).map(i => `<div class="feed-item" onclick="markSignal('${esc(i.title)}')">
+                <div class="feed-item-title"><span class="source-badge">GNews</span> ${esc(i.title)}</div>
+                <div class="feed-item-meta"><span>${new Date(i.pubDate).toLocaleDateString()}</span><span>${esc(i.source)}</span></div>
+            </div>`).join('');
+            existing.innerHTML = prev + newHtml;
+        }
+    } catch(e) { console.warn('GNews fetch failed:', e); }
+}
+
+// ======= OPENROUTER AI ANALYSIS =======
+async function runAIAnalysis() {
+    if (!apiKeys.openrouter) { toggleSettings(); return; }
+    const aiEl = document.getElementById('aiContent');
+    const btn = document.getElementById('aiRefreshBtn');
+    aiEl.className = 'ai-content loading-ai';
+    aiEl.textContent = 'Analyzing signals…';
+    btn.disabled = true;
+    btn.textContent = 'Analyzing…';
+
+    const dayNum = Math.max(1, Math.ceil((new Date() - ERA_START) / 86400000));
+    const score = calcStability();
+    const threatList = collectedHeadlines.threat.slice(0,8).join('\n- ');
+    const hopeList = collectedHeadlines.hope.slice(0,8).join('\n- ');
+
+    const prompt = `You are an analyst tracking the global transition to a post-labour economy. Today is Day ${dayNum} of the transition (starting March 31, 2026). The current Convergence Stability Index is ${Math.round(score)}/100.
+
+Today's THREAT signals (AI replacing jobs, automation pressure):
+- ${threatList || 'No threat signals collected today'}
+
+Today's HOPE signals (UBI, wealth funds, safety nets):
+- ${hopeList || 'No hope signals collected today'}
+
+Provide a brief daily analysis (3-4 paragraphs):
+1. What do today's signals tell us about the pace of obsolescence?
+2. How are safety-net mechanisms responding?
+3. Your assessment: is the transition accelerating, stable, or decelerating?
+4. One thing to watch for tomorrow.
+
+Be concise, analytical, and grounded. No hype.`;
+
+    try {
+        const r = await fetch(OPENROUTER_URL, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKeys.openrouter}`,
+                'Content-Type': 'application/json',
+                'HTTP-Referer': window.location.href,
+                'X-Title': 'Convergence Dashboard'
+            },
+            body: JSON.stringify({
+                model: AI_MODEL,
+                messages: [{ role: 'user', content: prompt }],
+                max_tokens: 600,
+                temperature: 0.7
+            })
+        });
+        const d = await r.json();
+        const text = d.choices?.[0]?.message?.content || 'No response received.';
+        aiEl.className = 'ai-content';
+        aiEl.textContent = text;
+        document.getElementById('aiTimestamp').textContent = new Date().toLocaleString();
+        state.lastAI = new Date().toISOString();
+        state.lastAIText = text;
+        saveState();
+    } catch(e) {
+        aiEl.className = 'ai-content';
+        aiEl.textContent = 'Error: ' + (e.message || 'Failed to reach OpenRouter. Check your API key.');
+    }
+    btn.disabled = false;
+    btn.textContent = 'Generate Insight';
+}
+
+function restoreLastAI() {
+    if (state.lastAIText) {
+        document.getElementById('aiContent').textContent = state.lastAIText;
+        document.getElementById('aiContent').className = 'ai-content';
+        if (state.lastAI) document.getElementById('aiTimestamp').textContent = 'Last: ' + new Date(state.lastAI).toLocaleString();
+    }
+}
+
+// ======= JOURNAL =======
+function addJournalEntry() {
+    const input = document.getElementById('journalInput');
+    const text = input.value.trim();
+    if (!text) return;
+    state.journal.unshift({ id:Date.now(), text, date:new Date().toISOString() });
+    saveState(); input.value=''; renderJournal();
+}
+function renderJournal() {
+    const c = document.getElementById('journalEntries');
+    document.getElementById('journalCount').textContent = state.journal.length + ' entries';
+    if (!state.journal.length) { c.innerHTML='<div class="loading" style="justify-content:flex-start">No entries yet. Start your log.</div>'; return; }
+    c.innerHTML = state.journal.slice(0,20).map(e => `
+        <div class="journal-entry">
+            <div class="journal-entry-date">${new Date(e.date).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'})}</div>
+            <div class="journal-entry-text">${esc(e.text)}</div>
+        </div>`).join('');
+}
+
+// ======= MILESTONES =======
+function addMilestone() {
+    const input = document.getElementById('msInput');
+    const text = input.value.trim();
+    if (!text) return;
+    state.milestones.unshift({id:Date.now(),text,done:false,date:new Date().toISOString()});
+    saveState(); input.value=''; renderMilestones(); updateGauge();
+}
+function toggleMs(id) {
+    const m = state.milestones.find(x=>x.id===id);
+    if (m) { m.done=!m.done; saveState(); renderMilestones(); updateGauge(); }
+}
+function deleteMs(id) {
+    state.milestones = state.milestones.filter(x=>x.id!==id);
+    saveState(); renderMilestones(); updateGauge();
+}
+function renderMilestones() {
+    const c = document.getElementById('msList');
+    if (!state.milestones.length) { c.innerHTML='<div class="loading" style="justify-content:flex-start">No milestones yet</div>'; return; }
+    c.innerHTML = state.milestones.map(m => `
+        <div class="ms-item ${m.done?'done':''}">
+            <div class="ms-check" onclick="toggleMs(${m.id})">✓</div>
+            <span class="ms-text">${esc(m.text)}</span>
+            <button class="ms-del" onclick="deleteMs(${m.id})">×</button>
+        </div>`).join('');
+}
+function markSignal(title) {
+    state.milestones.unshift({id:Date.now(),text:title,done:false,date:new Date().toISOString()});
+    saveState(); renderMilestones(); updateGauge();
+}
+
+// ======= DAILY SNAPSHOT (for sparklines) =======
+function recordDailySnapshot() {
+    const today = new Date().toISOString().slice(0,10);
+    if (!state.history) state.history=[];
+    const last = state.history[state.history.length-1];
+    if (!last || last.date !== today) {
+        state.history.push({ date:today, score:calcStability(), agentic:state.agenticScore });
+        if (state.history.length > 800) state.history.shift();
+        saveState();
+    }
+}
+
+// ======= SPARKLINE =======
+function drawSparkline() {
+    if (!state.history || state.history.length < 2) return;
+    const canvas = document.getElementById('agenticSparkline');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+
+    const data = state.history.map(h => h.agentic);
+    const w = rect.width, h = rect.height;
+    const max = Math.max(...data, 1), min = Math.min(...data, 0);
+    const step = w / (data.length - 1);
+
+    ctx.beginPath();
+    ctx.strokeStyle = '#ff3b5c';
+    ctx.lineWidth = 1.5;
+    ctx.lineJoin = 'round';
+    data.forEach((v, i) => {
+        const x = i * step;
+        const y = h - ((v - min) / (max - min || 1)) * (h - 4) - 2;
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+}
+
+// ======= UTIL =======
+function esc(s) { const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+document.getElementById('msInput')?.addEventListener('keypress', e => { if(e.key==='Enter') addMilestone(); });
+document.getElementById('journalInput')?.addEventListener('keydown', e => { if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)) addJournalEntry(); });
+</script>
+</body>
+</html>
