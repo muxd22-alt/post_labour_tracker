@@ -1,10 +1,76 @@
 {
-  "generated": "2026-04-02T00:47:04.285Z",
+  "generated": "2026-04-02T00:54:37.956Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "Jensen Huang on AI and jobs: Nvidia CEO says layoffs are about creativity, not automation",
+        "date": "2026-03-21T11:04:39Z",
+        "source": "GNews: The Financial Express",
+        "link": "https://www.financialexpress.com/life/technology-jensen-huang-on-ai-and-jobs-nvidia-ceo-says-layoffs-are-about-creativity-not-automation-4179756/"
+      },
+      {
+        "title": "How to play the AI-driven ‘blue-collar renaissance’",
+        "date": "2026-03-19T18:08:50Z",
+        "source": "GNews: CNBC",
+        "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
+      },
+      {
+        "title": "Studying for finance jobs that may disappear in 10 years? 8 skills to stay relevant",
+        "date": "2026-03-17T04:07:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/wealth/earn/studying-for-finance-jobs-that-may-disappear-in-10-years-8-skills-to-stay-relevant/slideshow/129623359.cms"
+      },
+      {
+        "title": "AI hits college grad jobs hard, ServiceNow CEO says",
+        "date": "2026-03-15T14:22:36Z",
+        "source": "GNews: The News International",
+        "link": "https://www.thenews.com.pk/latest/1395756-ai-hits-college-grad-jobs-hard-servicenow-ceo-says"
+      },
+      {
+        "title": "Hometown Workforce Introduces an AI Startup that Creates Jobs and Businesses Instead of Replacing Them",
+        "date": "2026-03-13T17:01:31Z",
+        "source": "GNews: TechBullion",
+        "link": "https://techbullion.com/hometown-workforce-introduces-an-ai-startup-that-creates-jobs-and-businesses-instead-of-replacing-them/"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "Jensen Huang on AI and jobs: Nvidia CEO says layoffs are about creativity, not automation",
+        "date": "2026-03-21T11:04:39Z",
+        "source": "GNews: The Financial Express",
+        "link": "https://www.financialexpress.com/life/technology-jensen-huang-on-ai-and-jobs-nvidia-ceo-says-layoffs-are-about-creativity-not-automation-4179756/"
+      },
+      {
+        "title": "How to play the AI-driven ‘blue-collar renaissance’",
+        "date": "2026-03-19T18:08:50Z",
+        "source": "GNews: CNBC",
+        "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
+      },
+      {
+        "title": "Studying for finance jobs that may disappear in 10 years? 8 skills to stay relevant",
+        "date": "2026-03-17T04:07:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/wealth/earn/studying-for-finance-jobs-that-may-disappear-in-10-years-8-skills-to-stay-relevant/slideshow/129623359.cms"
+      },
+      {
+        "title": "AI hits college grad jobs hard, ServiceNow CEO says",
+        "date": "2026-03-15T14:22:36Z",
+        "source": "GNews: The News International",
+        "link": "https://www.thenews.com.pk/latest/1395756-ai-hits-college-grad-jobs-hard-servicenow-ceo-says"
+      },
+      {
+        "title": "Hometown Workforce Introduces an AI Startup that Creates Jobs and Businesses Instead of Replacing Them",
+        "date": "2026-03-13T17:01:31Z",
+        "source": "GNews: TechBullion",
+        "link": "https://techbullion.com/hometown-workforce-introduces-an-ai-startup-that-creates-jobs-and-businesses-instead-of-replacing-them/"
+      }
+    ],
     "abundance": []
   },
-  "ai": null
+  "ai": {
+    "text": "Today’s signals indicate that labour obsolescence is advancing unevenly, with automation pressure concentrating in cognitive and entry-level professional roles rather than across the entire economy. The ServiceNow CEO’s observation about college graduate displacement and finance sector vulnerability aligns with a pattern where AI absorbs analytical and routine knowledge work first. Meanwhile, Nvidia’s framing of layoffs as creativity-driven and the noted blue-collar renaissance suggest physical, skilled, and adaptive trades remain insulated for now. The emergence of AI ventures explicitly focused on job creation rather than replacement confirms that market actors are still navigating augmentation versus substitution, meaning displacement is currently selective and sector-specific.\n\nSafety-net mechanisms show no measurable response today, reflecting a persistent gap between technological displacement and institutional adaptation. With UBI and sovereign wealth fund discussions remaining conceptual, there is no evidence of funding reallocation, legislative movement, or pilot expansions to address emerging skill gaps or transitional unemployment. The absence of concrete policy signals suggests that governments and multilateral bodies are still treating workforce disruption as a medium-term economic adjustment rather than an immediate structural shift, leaving displaced workers to rely on private upskilling or market-driven pivots.\n\nThe transition is accelerating in specific sectors but remains structurally fragmented. The velocity of AI integration into professional workflows is outpacing both institutional readiness and safety-net development, creating a widening mismatch between job market signals and policy intervention. While blue-collar and field-based roles show near-term resilience, the steady erosion of entry-level and analytical positions indicates that the post-labour shift is compounding rather than plateauing. The overall trajectory is accelerating, though its impact distribution remains highly uneven.\n\nTomorrow, monitor corporate restructuring announcements for explicit links between AI deployment and headcount reduction, alongside any movement from labor ministries on transitional training funding or pilot UBI expansions. Tracking whether early-career job postings in finance, consulting, and tech support show sustained contraction versus internal redeployment will clarify whether today’s selective displacement is solidifying into a broader hiring recalibration.",
+    "model": "qwen/qwen3.6-plus-preview:free",
+    "timestamp": "2026-04-02T00:53:49.369Z"
+  }
 }
