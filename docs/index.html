@@ -358,80 +358,27 @@
         .ai-model-tag { font-size:10px; color:var(--text-dim); font-family:var(--font-mono); }
         .ai-timestamp { font-size:10px; color:var(--text-dim); font-family:var(--font-mono); }
 
-        /* ===== SETTINGS MODAL ===== */
-        .settings-overlay {
-            position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px);
-            display:none; align-items:center; justify-content:center;
-        }
-        .settings-overlay.open { display:flex; }
-        .settings-modal {
-            background:var(--bg-card); border:1px solid var(--border-hover); border-radius:var(--radius-xl);
-            padding:32px; max-width:480px; width:90%; max-height:80vh; overflow-y:auto;
-        }
-        .settings-modal h2 { font-size:18px; font-weight:700; margin-bottom:4px; }
-        .settings-modal>p { font-size:12px; color:var(--text-muted); margin-bottom:20px; }
-        .setting-group { margin-bottom:18px; }
-        .setting-label { font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-bottom:6px; }
-        .setting-input {
-            width:100%; background:var(--bg-input); border:1px solid var(--border); border-radius:var(--radius-sm);
-            padding:10px 14px; color:var(--text-primary); font-family:var(--font-mono); font-size:12px;
-        }
-        .setting-input:focus { outline:none; border-color:rgba(77,124,255,0.3); }
-        .setting-input::placeholder { color:var(--text-dim); }
-        .setting-hint { font-size:10px; color:var(--text-dim); margin-top:4px; }
-        .settings-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:20px; }
-        .settings-btn {
-            padding:6px 14px; border-radius:20px; font-size:11px; font-weight:600; cursor:pointer;
-            border:none; font-family:var(--font-sans); background:transparent; color:var(--text-muted);
-        }
-        .settings-btn:hover { color:var(--text-primary); }
-
-        /* Settings gear icon */
-        .gear-btn {
-            position:fixed; top:20px; right:20px; z-index:50;
-            width:36px; height:36px; border-radius:10px;
-            background:var(--bg-card); border:1px solid var(--border); color:var(--text-muted);
-            display:flex; align-items:center; justify-content:center;
-            cursor:pointer; font-size:16px; transition:all 0.2s;
-        }
-        .gear-btn:hover { border-color:var(--border-hover); color:var(--text-secondary); transform:rotate(30deg); }
-
         /* News source badge */
         .source-badge {
             font-size:9px; padding:2px 6px; border-radius:3px;
             background:rgba(77,124,255,0.08); color:var(--accent-blue); font-weight:600;
             text-transform:uppercase; letter-spacing:0.05em;
         }
+        /* Data freshness indicator */
+        .data-fresh {
+            position:fixed; top:20px; right:20px; z-index:50;
+            padding:6px 14px; border-radius:20px;
+            background:var(--bg-card); border:1px solid var(--border);
+            font-size:10px; color:var(--text-muted); font-family:var(--font-mono);
+            display:flex; align-items:center; gap:6px;
+        }
+        .data-fresh .dot { width:6px;height:6px;border-radius:50%;background:var(--accent-hope); }
+        .data-fresh.stale .dot { background:var(--accent-amber); }
     </style>
 </head>
 <body>
     <div class="ambient-bg" id="ambientBg"></div>
-
-    <!-- SETTINGS GEAR -->
-    <button class="gear-btn" onclick="toggleSettings()" title="Settings">⚙</button>
-
-    <!-- SETTINGS MODAL -->
-    <div class="settings-overlay" id="settingsOverlay" onclick="if(event.target===this)toggleSettings()">
-        <div class="settings-modal">
-            <h2>⚙ Configuration</h2>
-            <p>API keys are stored locally in your browser. Never shared.</p>
-            <div class="setting-group">
-                <div class="setting-label">OpenRouter API Key</div>
-                <input class="setting-input" id="cfgOpenRouter" type="password" placeholder="sk-or-v1-...">
-                <div class="setting-hint">Free at openrouter.ai — powers AI signal analysis</div>
-            </div>
-            <div class="setting-group">
-                <div class="setting-label">GNews API Key (optional)</div>
-                <input class="setting-input" id="cfgGNews" type="password" placeholder="your-gnews-api-key">
-                <div class="setting-hint">Free at gnews.io — 100 requests/day for live news</div>
-            </div>
-            <div class="settings-actions">
-                <button class="settings-btn" onclick="toggleSettings()">Cancel</button>
-                <button class="btn btn-primary" onclick="saveSettings()">Save Keys</button>
-            </div>
-        </div>
-    </div>
-
+    <div class="data-fresh" id="dataFresh"><span class="dot"></span><span id="dataAge">Loading…</span></div>
     <div class="shell">
         <!-- HERO -->
         <header class="hero">
@@ -551,9 +498,8 @@
         <section class="ai-section">
             <div class="ai-head">
                 <h2>🧠 AI Daily Analysis <span class="ai-badge">Qwen 3</span></h2>
-                <button class="refresh-btn" onclick="runAIAnalysis()" id="aiRefreshBtn">Generate Insight</button>
             </div>
-            <div class="ai-content" id="aiContent">Configure your OpenRouter API key in ⚙ Settings, then click "Generate Insight" to get AI-powered analysis of today's signals.</div>
+            <div class="ai-content" id="aiContent">Waiting for data… AI analysis is generated daily via GitHub Actions.</div>
             <div class="ai-meta">
                 <span class="ai-model-tag" id="aiModelTag">qwen/qwen3-235b-a22b:free</span>
                 <span class="ai-timestamp" id="aiTimestamp"></span>
@@ -597,6 +543,7 @@ const PHASES = [
     { name: 'Convergence', maxDay: 800, color: 'rgba(0,229,160,0.08)' }
 ];
 
+// RSS fallback (client-side) for when data.json is not yet generated
 const RSS_PROXY = 'https://api.rss2json.com/api.json?rss_url=';
 const FEEDS = {
     threat: 'https://techcrunch.com/category/artificial-intelligence/feed/',
@@ -604,23 +551,15 @@ const FEEDS = {
     obsSignals: 'https://www.theverge.com/rss/ai/index.xml',
     abuSignals: 'https://www.reutersagency.com/feed/?best-topics=tech-post&post_type=best'
 };
-const THREAT_TERMS = ['agent','autonomous','robot','automat','replac','layoff','workforce','benchmark','humanoid','llm','obsolete'];
+const THREAT_TERMS = ['agent','autonomous','robot','automat','replac','layoff','workforce','benchmark','humanoid','llm','obsolete','agentic'];
 const HOPE_TERMS = ['ubi','universal basic','wealth fund','esop','ownership','carbon dividend','safety net','post-scarcity','income'];
-
-// OpenRouter config
-const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const AI_MODEL = 'qwen/qwen3-235b-a22b:free';
-
-// GNews config
-const GNEWS_BASE = 'https://gnews.io/api/v4/search';
 
 // ======= STATE =======
 let state = loadState();
-let apiKeys = loadKeys();
-let collectedHeadlines = { threat: [], hope: [] }; // collected from all sources for AI
+let pipelineData = null; // loaded from data.json (GitHub Actions)
 
 function defaultState() {
-    return { pillars:{capital:false,transfers:false,wages:false}, milestones:[], journal:[], history:[], agenticScore:45, lastAI:null, lastAIText:'' };
+    return { pillars:{capital:false,transfers:false,wages:false}, milestones:[], journal:[], history:[], agenticScore:45 };
 }
 function loadState() {
     try { const s = JSON.parse(localStorage.getItem('convergeDash_v2')); return s ? {...defaultState(),...s} : defaultState(); }
@@ -628,55 +567,139 @@ function loadState() {
 }
 function saveState() { localStorage.setItem('convergeDash_v2', JSON.stringify(state)); }
 
-function loadKeys() {
-    try { return JSON.parse(localStorage.getItem('convergeDash_keys')) || {}; }
-    catch { return {}; }
-}
-function saveKeys(keys) { localStorage.setItem('convergeDash_keys', JSON.stringify(keys)); }
-
-// ======= SETTINGS =======
-function toggleSettings() {
-    const o = document.getElementById('settingsOverlay');
-    o.classList.toggle('open');
-    if (o.classList.contains('open')) {
-        document.getElementById('cfgOpenRouter').value = apiKeys.openrouter || '';
-        document.getElementById('cfgGNews').value = apiKeys.gnews || '';
-    }
-}
-function saveSettings() {
-    apiKeys = {
-        openrouter: document.getElementById('cfgOpenRouter').value.trim(),
-        gnews: document.getElementById('cfgGNews').value.trim()
-    };
-    saveKeys(apiKeys);
-    toggleSettings();
-    // Re-fetch with new keys
-    fetchDailySignals();
-    fetchThreatFeed();
-    fetchHopeFeed();
-}
-
 // ======= INIT =======
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     updateHero();
-    updateGauge();
     updateAgentic();
     updateUHI();
     restorePillars();
     renderMilestones();
     renderJournal();
-    restoreLastAI();
-    fetchAllFeeds();
     recordDailySnapshot();
     drawSparkline();
     setInterval(updateHero, 60000);
-    setInterval(fetchAllFeeds, 300000);
+
+    // Try loading pipeline data first, fallback to client-side RSS
+    const loaded = await loadPipelineData();
+    if (!loaded) {
+        await fetchClientFeeds();
+    }
+    updateGauge();
 });
 
-async function fetchAllFeeds() {
-    collectedHeadlines = { threat: [], hope: [] };
-    await Promise.all([fetchThreatFeed(), fetchHopeFeed(), fetchGNews()]);
-    fetchDailySignals();
+// ======= DATA.JSON PIPELINE =======
+async function loadPipelineData() {
+    try {
+        const r = await fetch('data.json?t=' + Date.now());
+        if (!r.ok) throw new Error('No data.json');
+        pipelineData = await r.json();
+        console.log('Pipeline data loaded:', pipelineData.generated);
+
+        // Show data freshness
+        const genDate = new Date(pipelineData.generated);
+        const ageHours = Math.round((Date.now() - genDate) / 3600000);
+        const freshEl = document.getElementById('dataFresh');
+        const ageEl = document.getElementById('dataAge');
+        if (ageHours > 26) {
+            freshEl.classList.add('stale');
+            ageEl.textContent = `Data: ${ageHours}h ago`;
+        } else {
+            ageEl.textContent = `Updated: ${genDate.toLocaleDateString('en-US',{month:'short',day:'numeric'})} ${genDate.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}`;
+        }
+
+        // Populate feeds from pipeline data
+        renderPipelineFeeds(pipelineData.feeds);
+
+        // Populate AI analysis
+        if (pipelineData.ai) {
+            const aiEl = document.getElementById('aiContent');
+            aiEl.className = 'ai-content';
+            aiEl.textContent = pipelineData.ai.text;
+            document.getElementById('aiModelTag').textContent = pipelineData.ai.model || 'qwen/qwen3-235b-a22b:free';
+            document.getElementById('aiTimestamp').textContent = new Date(pipelineData.ai.timestamp).toLocaleString();
+        }
+
+        return true;
+    } catch(e) {
+        console.log('No pipeline data, using client-side fallback:', e.message);
+        document.getElementById('dataAge').textContent = 'Live (client-side)';
+        return false;
+    }
+}
+
+function renderPipelineFeeds(feeds) {
+    if (feeds.threat?.length) renderFeedItems(document.getElementById('threatFeed'), feeds.threat);
+    if (feeds.hope?.length) renderFeedItems(document.getElementById('hopeFeed'), feeds.hope);
+    if (feeds.obsolescence?.length) renderFeedItems(document.getElementById('obsFeed'), feeds.obsolescence);
+    if (feeds.abundance?.length) renderFeedItems(document.getElementById('abuFeed'), feeds.abundance);
+
+    // If no items in some feeds, show fallback
+    if (!feeds.threat?.length) renderFeedItems(document.getElementById('threatFeed'), FALLBACK.threat);
+    if (!feeds.hope?.length) renderFeedItems(document.getElementById('hopeFeed'), FALLBACK.hope);
+    if (!feeds.obsolescence?.length) renderFeedItems(document.getElementById('obsFeed'), FALLBACK.obs);
+    if (!feeds.abundance?.length) renderFeedItems(document.getElementById('abuFeed'), FALLBACK.abu);
+}
+
+const FALLBACK = {
+    threat: [
+        {title:'AI Agent Framework Achieves Human-Level on SWE-Bench',date:new Date().toISOString(),source:'RSS'},
+        {title:'Humanoid Robot Startup Raises $500M for Factory Automation',date:new Date().toISOString(),source:'RSS'},
+        {title:'Autonomous Agents Now Handle 30% of Development Tasks',date:new Date().toISOString(),source:'RSS'}
+    ],
+    hope: [
+        {title:'Norway Wealth Fund Announces AI-Era Investment Strategy',date:new Date().toISOString(),source:'RSS'},
+        {title:'California UBI Pilot Shows Measurable Poverty Reduction',date:new Date().toISOString(),source:'RSS'},
+        {title:'Employee Ownership Models See Record Adoption in Tech',date:new Date().toISOString(),source:'RSS'}
+    ],
+    obs: [
+        {title:'Major Tech Firm Announces 15% Workforce Reduction',source:'TechCrunch'},
+        {title:'AI Tool Replaces Entire Customer Service Department',source:'The Verge'},
+        {title:'White-Collar Jobs Most at Risk from Agentic AI',source:'Bloomberg'}
+    ],
+    abu: [
+        {title:'New Sovereign Wealth Fund Targets AI-Era Inequality',source:'Reuters'},
+        {title:'UBI Pilot Launches in 5 Major Cities',source:'NPR'},
+        {title:'Breakthrough in Fusion Energy Cost Reduction Announced',source:'Nature'}
+    ]
+};
+
+// ======= CLIENT-SIDE RSS FALLBACK =======
+async function fetchClientFeeds() {
+    await Promise.all([
+        fetchRSSFeed(FEEDS.threat, THREAT_TERMS, document.getElementById('threatFeed'), FALLBACK.threat),
+        fetchRSSFeed(FEEDS.hope, HOPE_TERMS, document.getElementById('hopeFeed'), FALLBACK.hope),
+        fetchRSSFeed(FEEDS.obsSignals, ['layoff','replac','automat','cut','efficien'], document.getElementById('obsFeed'), FALLBACK.obs),
+        fetchRSSFeed(FEEDS.abuSignals, ['ubi','wealth fund','carbon','energy','sovereign'], document.getElementById('abuFeed'), FALLBACK.abu)
+    ]);
+}
+
+async function fetchRSSFeed(url, terms, container, fallback) {
+    container.innerHTML = '<div class="loading">Scanning…</div>';
+    try {
+        const r = await fetch(RSS_PROXY + encodeURIComponent(url));
+        const d = await r.json();
+        if (d.status === 'ok') {
+            const items = d.items
+                .filter(i => terms.some(t => (i.title+' '+(i.description||'')).toLowerCase().includes(t)))
+                .slice(0, 6)
+                .map(i => ({title: i.title, date: i.pubDate, source: 'RSS'}));
+            if (items.length) { renderFeedItems(container, items); return; }
+        }
+        throw 0;
+    } catch { renderFeedItems(container, fallback); }
+}
+
+function renderFeedItems(container, items) {
+    if (!items.length) { container.innerHTML = '<div class="loading">No matching signals</div>'; return; }
+    container.innerHTML = items.map(i => {
+        const src = (i.source || '').toLowerCase();
+        const badge = src.includes('gnews') ? '<span class="source-badge">GNews</span> ' : (src === 'rss' ? '<span class="source-badge">RSS</span> ' : '');
+        const dateStr = i.date ? new Date(i.date).toLocaleDateString() : (i.source || '');
+        return `<div class="feed-item" onclick="markSignal('${esc(i.title)}')">
+            <div class="feed-item-title">${badge}${esc(i.title)}</div>
+            <div class="feed-item-meta"><span>${dateStr}</span></div>
+        </div>`;
+    }).join('');
 }
 
 // ======= HERO =======
@@ -686,12 +709,10 @@ function updateHero() {
     const day = Math.max(1, Math.ceil(diff / 86400000));
     document.getElementById('dayCount').textContent = day;
     document.getElementById('heroDate').textContent = now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-    // phase
     const phase = PHASES.find(p => day <= p.maxDay) || PHASES[PHASES.length-1];
     const idx = PHASES.indexOf(phase)+1;
     document.getElementById('phaseName').textContent = `Phase ${idx} — ${phase.name}`;
     document.getElementById('ambientBg').style.setProperty('--ambient-color', phase.color);
-    // days since threshold
     const dst = Math.max(0, Math.floor(diff/86400000));
     document.getElementById('daysSinceThreshold').textContent = dst;
 }
@@ -710,17 +731,11 @@ function updateGauge() {
     const scoreEl = document.getElementById('gaugeScoreEl');
     const pill = document.getElementById('statusPill');
     const label = document.getElementById('statusLabel');
-
-    // dashoffset: 345 = full hidden, 0 = full shown
     const offset = 345 - (345 * score / 100);
     el.style.strokeDashoffset = offset;
-
-    // needle rotation: -85deg (left) to +85deg (right)
     const angle = -85 + (170 * score / 100);
     needle.setAttribute('transform', `rotate(${angle} 140 145)`);
-
     scoreEl.textContent = Math.round(score);
-
     if (score < 30) { pill.className='status-pill critical'; label.textContent='Critical — Collapse Risk'; }
     else if (score < 50) { pill.className='status-pill warning'; label.textContent='Warning — Transition Stress'; }
     else if (score < 70) { pill.className='status-pill stable'; label.textContent='Stable — Managed Transition'; }
@@ -738,7 +753,6 @@ function updateAgentic() {
     document.getElementById('agenticVal').textContent = state.agenticScore + '%';
     document.getElementById('agenticBar').style.width = state.agenticScore + '%';
     saveState();
-    updateGauge();
 }
 
 // ======= UHI =======
@@ -755,178 +769,6 @@ function togglePillar(id) {
     state.pillars[id] = !state.pillars[id];
     document.getElementById('p-'+id).classList.toggle('done', state.pillars[id]);
     saveState(); updateUHI();
-}
-
-// ======= RSS + NEWS FETCHING =======
-async function fetchFeed(url, terms, container, fallback, collectAs) {
-    if (container) container.innerHTML = '<div class="loading">Scanning…</div>';
-    try {
-        const r = await fetch(RSS_PROXY + encodeURIComponent(url));
-        const d = await r.json();
-        if (d.status==='ok') {
-            const items = d.items.filter(i => terms.some(t => (i.title+' '+(i.description||'')).toLowerCase().includes(t))).slice(0,6);
-            if (items.length) {
-                if (container) renderFeedItems(container, items, 'rss');
-                if (collectAs) items.forEach(i => collectedHeadlines[collectAs].push(i.title));
-                return items;
-            }
-        }
-        throw 0;
-    } catch {
-        if (container) renderFeedItems(container, fallback, 'demo');
-        if (collectAs) fallback.forEach(i => collectedHeadlines[collectAs].push(i.title));
-        return fallback;
-    }
-}
-
-function renderFeedItems(container, items, src) {
-    if (!items.length) { container.innerHTML='<div class="loading">No matching signals</div>'; return; }
-    container.innerHTML = items.map(i => {
-        const badge = src === 'gnews' ? '<span class="source-badge">GNews</span> ' : (src === 'rss' ? '<span class="source-badge">RSS</span> ' : '');
-        return `<div class="feed-item" onclick="markSignal('${esc(i.title)}')">
-            <div class="feed-item-title">${badge}${esc(i.title)}</div>
-            <div class="feed-item-meta"><span>${i.pubDate?new Date(i.pubDate).toLocaleDateString():i.source||''}</span></div>
-        </div>`;
-    }).join('');
-}
-
-async function fetchThreatFeed() {
-    await fetchFeed(FEEDS.threat, THREAT_TERMS, document.getElementById('threatFeed'), [
-        {title:'AI Agent Framework Achieves Human-Level on SWE-Bench',pubDate:new Date()},
-        {title:'Humanoid Robot Startup Raises $500M for Factory Automation',pubDate:new Date()},
-        {title:'Autonomous Agents Now Handle 30% of Development Tasks',pubDate:new Date()},
-        {title:'LLM Reasoning Benchmark Shows 40% Year-over-Year Improvement',pubDate:new Date()}
-    ], 'threat');
-}
-async function fetchHopeFeed() {
-    await fetchFeed(FEEDS.hope, HOPE_TERMS, document.getElementById('hopeFeed'), [
-        {title:'Norway Wealth Fund Announces AI-Era Investment Strategy',pubDate:new Date()},
-        {title:'California UBI Pilot Shows Measurable Poverty Reduction',pubDate:new Date()},
-        {title:'Employee Ownership Models See Record Adoption in Tech',pubDate:new Date()},
-        {title:'Carbon Dividend Program Expands to 12 Additional States',pubDate:new Date()}
-    ], 'hope');
-}
-function fetchDailySignals() {
-    fetchFeed(FEEDS.obsSignals, ['layoff','replac','automat','cut','AI productiv','workforce reduc','efficien'], document.getElementById('obsFeed'), [
-        {title:'Major Tech Firm Announces 15% Workforce Reduction',source:'TechCrunch'},
-        {title:'AI Tool Replaces Entire Customer Service Department',source:'The Verge'},
-        {title:'White-Collar Jobs Most at Risk from Agentic AI',source:'Bloomberg'}
-    ], 'threat');
-    fetchFeed(FEEDS.abuSignals, ['ubi','wealth fund','carbon','energy','sovereign','universal income','post-scarcity'], document.getElementById('abuFeed'), [
-        {title:'New Sovereign Wealth Fund Targets AI-Era Inequality',source:'Reuters'},
-        {title:'UBI Pilot Launches in 5 Major Cities',source:'NPR'},
-        {title:'Breakthrough in Fusion Energy Cost Reduction Announced',source:'Nature'}
-    ], 'hope');
-}
-
-// ======= GNEWS API =======
-async function fetchGNews() {
-    if (!apiKeys.gnews) return;
-    try {
-        // Fetch AI/automation threat news
-        const threatUrl = `${GNEWS_BASE}?q=AI+automation+jobs&lang=en&max=5&apikey=${apiKeys.gnews}`;
-        const tr = await fetch(threatUrl);
-        const td = await tr.json();
-        if (td.articles) {
-            const existing = document.getElementById('threatFeed');
-            const items = td.articles.map(a => ({title:a.title, pubDate:a.publishedAt, source:a.source?.name||'GNews'}));
-            items.forEach(i => collectedHeadlines.threat.push(i.title));
-            // Append to existing feed
-            const prev = existing.innerHTML;
-            const newHtml = items.slice(0,3).map(i => `<div class="feed-item" onclick="markSignal('${esc(i.title)}')">
-                <div class="feed-item-title"><span class="source-badge">GNews</span> ${esc(i.title)}</div>
-                <div class="feed-item-meta"><span>${new Date(i.pubDate).toLocaleDateString()}</span><span>${esc(i.source)}</span></div>
-            </div>`).join('');
-            existing.innerHTML = prev + newHtml;
-        }
-
-        // Fetch UBI/safety-net hope news
-        const hopeUrl = `${GNEWS_BASE}?q=universal+basic+income+OR+sovereign+wealth+fund&lang=en&max=5&apikey=${apiKeys.gnews}`;
-        const hr = await fetch(hopeUrl);
-        const hd = await hr.json();
-        if (hd.articles) {
-            const existing = document.getElementById('hopeFeed');
-            const items = hd.articles.map(a => ({title:a.title, pubDate:a.publishedAt, source:a.source?.name||'GNews'}));
-            items.forEach(i => collectedHeadlines.hope.push(i.title));
-            const prev = existing.innerHTML;
-            const newHtml = items.slice(0,3).map(i => `<div class="feed-item" onclick="markSignal('${esc(i.title)}')">
-                <div class="feed-item-title"><span class="source-badge">GNews</span> ${esc(i.title)}</div>
-                <div class="feed-item-meta"><span>${new Date(i.pubDate).toLocaleDateString()}</span><span>${esc(i.source)}</span></div>
-            </div>`).join('');
-            existing.innerHTML = prev + newHtml;
-        }
-    } catch(e) { console.warn('GNews fetch failed:', e); }
-}
-
-// ======= OPENROUTER AI ANALYSIS =======
-async function runAIAnalysis() {
-    if (!apiKeys.openrouter) { toggleSettings(); return; }
-    const aiEl = document.getElementById('aiContent');
-    const btn = document.getElementById('aiRefreshBtn');
-    aiEl.className = 'ai-content loading-ai';
-    aiEl.textContent = 'Analyzing signals…';
-    btn.disabled = true;
-    btn.textContent = 'Analyzing…';
-
-    const dayNum = Math.max(1, Math.ceil((new Date() - ERA_START) / 86400000));
-    const score = calcStability();
-    const threatList = collectedHeadlines.threat.slice(0,8).join('\n- ');
-    const hopeList = collectedHeadlines.hope.slice(0,8).join('\n- ');
-
-    const prompt = `You are an analyst tracking the global transition to a post-labour economy. Today is Day ${dayNum} of the transition (starting March 31, 2026). The current Convergence Stability Index is ${Math.round(score)}/100.
-
-Today's THREAT signals (AI replacing jobs, automation pressure):
-- ${threatList || 'No threat signals collected today'}
-
-Today's HOPE signals (UBI, wealth funds, safety nets):
-- ${hopeList || 'No hope signals collected today'}
-
-Provide a brief daily analysis (3-4 paragraphs):
-1. What do today's signals tell us about the pace of obsolescence?
-2. How are safety-net mechanisms responding?
-3. Your assessment: is the transition accelerating, stable, or decelerating?
-4. One thing to watch for tomorrow.
-
-Be concise, analytical, and grounded. No hype.`;
-
-    try {
-        const r = await fetch(OPENROUTER_URL, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${apiKeys.openrouter}`,
-                'Content-Type': 'application/json',
-                'HTTP-Referer': window.location.href,
-                'X-Title': 'Convergence Dashboard'
-            },
-            body: JSON.stringify({
-                model: AI_MODEL,
-                messages: [{ role: 'user', content: prompt }],
-                max_tokens: 600,
-                temperature: 0.7
-            })
-        });
-        const d = await r.json();
-        const text = d.choices?.[0]?.message?.content || 'No response received.';
-        aiEl.className = 'ai-content';
-        aiEl.textContent = text;
-        document.getElementById('aiTimestamp').textContent = new Date().toLocaleString();
-        state.lastAI = new Date().toISOString();
-        state.lastAIText = text;
-        saveState();
-    } catch(e) {
-        aiEl.className = 'ai-content';
-        aiEl.textContent = 'Error: ' + (e.message || 'Failed to reach OpenRouter. Check your API key.');
-    }
-    btn.disabled = false;
-    btn.textContent = 'Generate Insight';
-}
-
-function restoreLastAI() {
-    if (state.lastAIText) {
-        document.getElementById('aiContent').textContent = state.lastAIText;
-        document.getElementById('aiContent').className = 'ai-content';
-        if (state.lastAI) document.getElementById('aiTimestamp').textContent = 'Last: ' + new Date(state.lastAI).toLocaleString();
-    }
 }
 
 // ======= JOURNAL =======
