@@ -8,71 +8,90 @@ const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY || '';
 const GNEWS_KEY = process.env.GNEWS_API_KEY || '';
 const RSS_PROXY = 'https://api.rss2json.com/api.json?rss_url=';
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const AI_MODEL = 'qwen/qwen3-235b-a22b:free';
+const AI_MODEL = 'qwen/qwen3.6-plus-preview:free';
 const GNEWS_BASE = 'https://gnews.io/api/v4/search';
 
 const ERA_START = new Date('2026-03-31T00:00:00');
 
-const FEEDS = {
-    threat: 'https://techcrunch.com/category/artificial-intelligence/feed/',
-    hope: 'https://news.mit.edu/topic/mitartificial-intelligence2-news',
-    obsSignals: 'https://www.theverge.com/rss/ai/index.xml',
-    abuSignals: 'https://www.reutersagency.com/feed/?best-topics=tech-post&post_type=best'
-};
+// RSS feed URLs
+const FEEDS = [
+    { url: 'https://techcrunch.com/category/artificial-intelligence/feed/', category: 'threat', label: 'TechCrunch' },
+    { url: 'https://www.theverge.com/rss/ai/index.xml', category: 'threat', label: 'The Verge' },
+    { url: 'https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml', category: 'hope', label: 'MIT News' },
+    { url: 'https://feeds.arstechnica.com/arstechnica/technology-lab', category: 'threat', label: 'Ars Technica' },
+];
 
-const THREAT_TERMS = ['agent','autonomous','robot','automat','replac','layoff','workforce','benchmark','humanoid','llm','obsolete','agentic','ai model'];
-const HOPE_TERMS = ['ubi','universal basic','wealth fund','esop','ownership','carbon dividend','safety net','post-scarcity','income','universal income'];
-const OBS_TERMS = ['layoff','replac','automat','cut','AI productiv','workforce reduc','efficien','job loss','downsiz'];
-const ABU_TERMS = ['ubi','wealth fund','carbon','energy','sovereign','universal income','post-scarcity','fusion','renewable'];
-
-async function fetchRSS(url, terms, maxItems = 6) {
+// Fetch RSS — returns ALL items from AI-related feeds (they're already topic-filtered by the feed URL)
+async function fetchRSS(feedUrl, label, maxItems = 6) {
     try {
-        const r = await fetch(RSS_PROXY + encodeURIComponent(url));
-        const d = await r.json();
-        if (d.status === 'ok') {
-            return d.items
-                .filter(i => terms.some(t => ((i.title || '') + ' ' + (i.description || '')).toLowerCase().includes(t)))
-                .slice(0, maxItems)
-                .map(i => ({ title: i.title, date: i.pubDate, source: 'RSS', link: i.link }));
+        const r = await fetch(RSS_PROXY + encodeURIComponent(feedUrl));
+        const text = await r.text();
+        let d;
+        try { d = JSON.parse(text); } catch { console.warn(`  RSS parse failed for ${label}`); return []; }
+
+        if (d.status === 'ok' && d.items && d.items.length > 0) {
+            console.log(`  ${label}: ${d.items.length} total items from feed`);
+            return d.items.slice(0, maxItems).map(i => ({
+                title: i.title,
+                date: i.pubDate,
+                source: label,
+                link: i.link || ''
+            }));
+        } else {
+            console.warn(`  ${label}: status=${d.status}, items=${d.items?.length || 0}`);
         }
-    } catch (e) { console.warn('RSS fetch failed for', url, e.message); }
+    } catch (e) { console.warn(`  ${label}: fetch error — ${e.message}`); }
     return [];
 }
 
-async function fetchGNews(query, maxItems = 5) {
-    if (!GNEWS_KEY) { console.log('No GNEWS_API_KEY, skipping GNews'); return []; }
+// Fetch GNews
+async function fetchGNews(query, label, maxItems = 5) {
+    if (!GNEWS_KEY) return [];
     try {
         const url = `${GNEWS_BASE}?q=${encodeURIComponent(query)}&lang=en&max=${maxItems}&apikey=${GNEWS_KEY}`;
         const r = await fetch(url);
         const d = await r.json();
-        if (d.articles) {
+        if (d.articles && d.articles.length > 0) {
+            console.log(`  GNews "${label}": ${d.articles.length} articles`);
             return d.articles.map(a => ({
                 title: a.title,
                 date: a.publishedAt,
-                source: a.source?.name || 'GNews',
-                link: a.url
+                source: `GNews: ${a.source?.name || 'Unknown'}`,
+                link: a.url || ''
             }));
+        } else {
+            console.warn(`  GNews "${label}": no articles. Response:`, JSON.stringify(d).slice(0, 150));
         }
-    } catch (e) { console.warn('GNews fetch failed:', e.message); }
+    } catch (e) { console.warn(`  GNews "${label}": error — ${e.message}`); }
     return [];
 }
 
+// Run AI analysis via OpenRouter
 async function runAIAnalysis(threatHeadlines, hopeHeadlines) {
-    if (!OPENROUTER_KEY) { console.log('No OPENROUTER_API_KEY, skipping AI analysis'); return null; }
+    if (!OPENROUTER_KEY) {
+        console.warn('!! OPENROUTER_API_KEY is empty/missing — skipping AI');
+        return null;
+    }
+    console.log(`  Key starts with: ${OPENROUTER_KEY.slice(0, 12)}...`);
 
     const now = new Date();
     const dayNum = Math.max(1, Math.ceil((now - ERA_START) / 86400000));
 
-    const threatList = threatHeadlines.slice(0, 10).map(h => `- ${h}`).join('\n');
-    const hopeList = hopeHeadlines.slice(0, 10).map(h => `- ${h}`).join('\n');
+    const threatList = threatHeadlines.length > 0
+        ? threatHeadlines.slice(0, 10).map(h => `- ${h}`).join('\n')
+        : '- No specific threat signals collected today, but AI automation continues to accelerate globally';
 
-    const prompt = `You are an analyst tracking the global transition to a post-labour economy. Today is Day ${dayNum} of the transition (starting March 31, 2026).
+    const hopeList = hopeHeadlines.length > 0
+        ? hopeHeadlines.slice(0, 10).map(h => `- ${h}`).join('\n')
+        : '- No specific safety-net signals collected today. UBI and sovereign wealth fund discussions continue.';
+
+    const prompt = `You are an analyst tracking the global transition to a post-labour economy. Today is Day ${dayNum} of the transition era (starting March 31, 2026). The year is 2026.
 
 Today's THREAT signals (AI replacing jobs, automation pressure):
-${threatList || '- No threat signals collected today'}
+${threatList}
 
 Today's HOPE signals (UBI, wealth funds, safety nets):
-${hopeList || '- No hope signals collected today'}
+${hopeList}
 
 Provide a brief daily analysis (3-4 paragraphs):
 1. What do today's signals tell us about the pace of obsolescence?
@@ -80,9 +99,10 @@ Provide a brief daily analysis (3-4 paragraphs):
 3. Your assessment: is the transition accelerating, stable, or decelerating?
 4. One thing to watch for tomorrow.
 
-Be concise, analytical, and grounded. No hype.`;
+Be concise, analytical, and grounded. No hype. Write in plain text, no markdown formatting.`;
 
     try {
+        console.log(`  Calling OpenRouter with model: ${AI_MODEL}`);
         const r = await fetch(OPENROUTER_URL, {
             method: 'POST',
             headers: {
@@ -98,67 +118,101 @@ Be concise, analytical, and grounded. No hype.`;
                 temperature: 0.7
             })
         });
-        const d = await r.json();
+
+        const responseText = await r.text();
+        console.log(`  OpenRouter HTTP ${r.status}`);
+
+        let d;
+        try { d = JSON.parse(responseText); } catch {
+            console.warn('  OpenRouter returned non-JSON:', responseText.slice(0, 200));
+            return null;
+        }
+
+        if (d.error) {
+            console.warn('  OpenRouter API error:', JSON.stringify(d.error).slice(0, 200));
+            return null;
+        }
+
         const text = d.choices?.[0]?.message?.content;
-        if (text) return { text, model: AI_MODEL, timestamp: now.toISOString() };
-        console.warn('AI response empty:', JSON.stringify(d).slice(0, 200));
-    } catch (e) { console.warn('OpenRouter failed:', e.message); }
+        if (text) {
+            console.log(`  AI analysis received: ${text.length} chars`);
+            return { text, model: AI_MODEL, timestamp: now.toISOString() };
+        }
+        console.warn('  AI response had no content:', JSON.stringify(d).slice(0, 300));
+    } catch (e) { console.warn('  OpenRouter fetch error:', e.message); }
     return null;
 }
 
 async function main() {
     console.log('=== Convergence Dashboard Data Fetch ===');
     console.log('Time:', new Date().toISOString());
-    console.log('OpenRouter key:', OPENROUTER_KEY ? 'present' : 'MISSING');
-    console.log('GNews key:', GNEWS_KEY ? 'present' : 'MISSING');
+    console.log('OpenRouter key:', OPENROUTER_KEY ? `present (${OPENROUTER_KEY.length} chars)` : '!! MISSING !!');
+    console.log('GNews key:', GNEWS_KEY ? `present (${GNEWS_KEY.length} chars)` : 'not set (optional)');
 
-    // 1. Fetch RSS feeds
+    // 1. Fetch ALL RSS feeds
     console.log('\n--- RSS Feeds ---');
-    const [threatRSS, hopeRSS, obsRSS, abuRSS] = await Promise.all([
-        fetchRSS(FEEDS.threat, THREAT_TERMS),
-        fetchRSS(FEEDS.hope, HOPE_TERMS),
-        fetchRSS(FEEDS.obsSignals, OBS_TERMS),
-        fetchRSS(FEEDS.abuSignals, ABU_TERMS)
-    ]);
-    console.log(`Threat RSS: ${threatRSS.length} items`);
-    console.log(`Hope RSS: ${hopeRSS.length} items`);
-    console.log(`Obsolescence signals: ${obsRSS.length} items`);
-    console.log(`Abundance signals: ${abuRSS.length} items`);
+    const rssResults = {};
+    for (const feed of FEEDS) {
+        const items = await fetchRSS(feed.url, feed.label);
+        if (!rssResults[feed.category]) rssResults[feed.category] = [];
+        rssResults[feed.category].push(...items);
+    }
+    console.log(`Total threat RSS: ${rssResults.threat?.length || 0}`);
+    console.log(`Total hope RSS: ${rssResults.hope?.length || 0}`);
 
     // 2. Fetch GNews
     console.log('\n--- GNews ---');
+    if (!GNEWS_KEY) {
+        console.log('Skipping GNews (no API key)');
+    }
     const [gThreat, gHope] = await Promise.all([
-        fetchGNews('AI automation jobs replace workforce'),
-        fetchGNews('universal basic income OR sovereign wealth fund OR employee ownership')
+        fetchGNews('artificial intelligence automation jobs', 'AI threat'),
+        fetchGNews('universal basic income sovereign wealth fund', 'safety net')
     ]);
-    console.log(`GNews threat: ${gThreat.length} items`);
-    console.log(`GNews hope: ${gHope.length} items`);
 
-    // Combine all headlines for AI
-    const allThreatHeadlines = [...threatRSS, ...obsRSS, ...gThreat].map(i => i.title);
-    const allHopeHeadlines = [...hopeRSS, ...abuRSS, ...gHope].map(i => i.title);
+    // 3. Combine feeds
+    const allThreat = [...(rssResults.threat || []), ...gThreat];
+    const allHope = [...(rssResults.hope || []), ...gHope];
 
-    // 3. Run AI analysis
+    // Use threat items also for obsolescence feed, hope for abundance
+    const obsolescence = allThreat.slice(0, 6);
+    const abundance = allHope.slice(0, 6);
+
+    // Combine headlines for AI
+    const allThreatHeadlines = allThreat.map(i => i.title);
+    const allHopeHeadlines = allHope.map(i => i.title);
+
+    console.log(`\nHeadlines for AI — threat: ${allThreatHeadlines.length}, hope: ${allHopeHeadlines.length}`);
+
+    // 4. Run AI analysis (always attempt, even with empty feeds)
     console.log('\n--- AI Analysis ---');
     const ai = await runAIAnalysis(allThreatHeadlines, allHopeHeadlines);
-    console.log(ai ? 'AI analysis generated' : 'AI analysis skipped/failed');
+    console.log(ai ? `AI done (${ai.text.length} chars)` : '!! AI analysis failed !!');
 
-    // 4. Build output
+    // 5. Build output
     const data = {
         generated: new Date().toISOString(),
         feeds: {
-            threat: [...threatRSS, ...gThreat.map(i => ({...i, source: `GNews: ${i.source}`}))],
-            hope: [...hopeRSS, ...gHope.map(i => ({...i, source: `GNews: ${i.source}`}))],
-            obsolescence: obsRSS,
-            abundance: abuRSS
+            threat: allThreat.slice(0, 8),
+            hope: allHope.slice(0, 8),
+            obsolescence: obsolescence,
+            abundance: abundance
         },
         ai: ai
     };
 
-    // 5. Write to docs/data.json
+    // 6. Write to docs/data.json
     const outPath = path.join(__dirname, '..', 'docs', 'data.json');
     fs.writeFileSync(outPath, JSON.stringify(data, null, 2));
-    console.log(`\nWrote ${outPath} (${(fs.statSync(outPath).size / 1024).toFixed(1)} KB)`);
+    const size = (fs.statSync(outPath).size / 1024).toFixed(1);
+    console.log(`\nWrote ${outPath} (${size} KB)`);
+    console.log('Feed counts:', {
+        threat: data.feeds.threat.length,
+        hope: data.feeds.hope.length,
+        obsolescence: data.feeds.obsolescence.length,
+        abundance: data.feeds.abundance.length,
+        ai: !!data.ai
+    });
 }
 
 main().catch(e => { console.error('Fatal:', e); process.exit(1); });

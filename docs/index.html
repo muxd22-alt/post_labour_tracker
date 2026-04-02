@@ -501,7 +501,7 @@
             </div>
             <div class="ai-content" id="aiContent">Waiting for data… AI analysis is generated daily via GitHub Actions.</div>
             <div class="ai-meta">
-                <span class="ai-model-tag" id="aiModelTag">qwen/qwen3-235b-a22b:free</span>
+                <span class="ai-model-tag" id="aiModelTag">qwen/qwen3.6-plus-preview:free</span>
                 <span class="ai-timestamp" id="aiTimestamp"></span>
             </div>
         </section>
@@ -615,7 +615,7 @@ async function loadPipelineData() {
             const aiEl = document.getElementById('aiContent');
             aiEl.className = 'ai-content';
             aiEl.textContent = pipelineData.ai.text;
-            document.getElementById('aiModelTag').textContent = pipelineData.ai.model || 'qwen/qwen3-235b-a22b:free';
+            document.getElementById('aiModelTag').textContent = pipelineData.ai.model || 'qwen/qwen3.6-plus-preview:free';
             document.getElementById('aiTimestamp').textContent = new Date(pipelineData.ai.timestamp).toLocaleString();
         }
 
