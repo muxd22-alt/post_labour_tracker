@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T07:22:00.532Z",
+  "generated": "2026-04-03T07:17:38.366Z",
   "feeds": {
     "threat": [
       {
@@ -68,9 +68,5 @@
     ],
     "abundance": []
   },
-  "ai": {
-    "text": "Today’s signals indicate an accelerating but highly uneven pace of labor obsolescence. AI disruption is concentrating heavily in knowledge and entry-level graduate roles, with financial services and corporate administration facing near-term structural compression. Conversely, the documented blue-collar renaissance and executive framing of recent layoffs as creativity-driven rather than purely automated suggest that trade and physical labor remain insulated. The net effect is a rapid reallocation of economic value away from routine cognitive work, rather than a uniform elimination of employment.\n\nInstitutional safety nets are not tracking this velocity. The lack of new UBI deployments, sovereign wealth fund actions, or adaptive policy announcements today confirms a persistent implementation lag. While legislative and academic discussions continue, they have not translated into deployable mechanisms that match the current rate of occupational displacement. Workers facing transition remain dependent on legacy unemployment frameworks and corporate upskilling programs, which are increasingly misaligned with the emerging skill distribution.\n\nThe overall transition is accelerating structurally but remains sectorally fragmented. White-collar erosion is outpacing institutional adaptation, while sustained demand in manual and service sectors provides temporary macroeconomic stability. This divergence masks underlying polarization and suggests that aggregate employment figures will remain stable even as internal workforce reallocation intensifies. Tomorrow, monitor state-level policy filings and corporate earnings guidance for early signals of wage compression or formal retraining mandates, as these will indicate whether market forces are beginning to trigger institutional safety-net activation.",
-    "model": "qwen/qwen3.6-plus-preview:free",
-    "timestamp": "2026-04-02T07:20:55.535Z"
-  }
+  "ai": null
 }
