@@ -1,71 +1,9 @@
 {
-  "generated": "2026-04-11T07:07:15.154Z",
+  "generated": "2026-04-12T07:22:03.774Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "Jensen Huang on AI and jobs: Nvidia CEO says layoffs are about creativity, not automation",
-        "date": "2026-03-21T11:04:39Z",
-        "source": "GNews: The Financial Express",
-        "link": "https://www.financialexpress.com/life/technology-jensen-huang-on-ai-and-jobs-nvidia-ceo-says-layoffs-are-about-creativity-not-automation-4179756/"
-      },
-      {
-        "title": "How to play the AI-driven ‘blue-collar renaissance’",
-        "date": "2026-03-19T18:08:50Z",
-        "source": "GNews: CNBC",
-        "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
-      },
-      {
-        "title": "Studying for finance jobs that may disappear in 10 years? 8 skills to stay relevant",
-        "date": "2026-03-17T04:07:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/wealth/earn/studying-for-finance-jobs-that-may-disappear-in-10-years-8-skills-to-stay-relevant/slideshow/129623359.cms"
-      },
-      {
-        "title": "AI hits college grad jobs hard, ServiceNow CEO says",
-        "date": "2026-03-15T14:22:36Z",
-        "source": "GNews: The News International",
-        "link": "https://www.thenews.com.pk/latest/1395756-ai-hits-college-grad-jobs-hard-servicenow-ceo-says"
-      },
-      {
-        "title": "Hometown Workforce Introduces an AI Startup that Creates Jobs and Businesses Instead of Replacing Them",
-        "date": "2026-03-13T17:01:31Z",
-        "source": "GNews: TechBullion",
-        "link": "https://techbullion.com/hometown-workforce-introduces-an-ai-startup-that-creates-jobs-and-businesses-instead-of-replacing-them/"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "Jensen Huang on AI and jobs: Nvidia CEO says layoffs are about creativity, not automation",
-        "date": "2026-03-21T11:04:39Z",
-        "source": "GNews: The Financial Express",
-        "link": "https://www.financialexpress.com/life/technology-jensen-huang-on-ai-and-jobs-nvidia-ceo-says-layoffs-are-about-creativity-not-automation-4179756/"
-      },
-      {
-        "title": "How to play the AI-driven ‘blue-collar renaissance’",
-        "date": "2026-03-19T18:08:50Z",
-        "source": "GNews: CNBC",
-        "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
-      },
-      {
-        "title": "Studying for finance jobs that may disappear in 10 years? 8 skills to stay relevant",
-        "date": "2026-03-17T04:07:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/wealth/earn/studying-for-finance-jobs-that-may-disappear-in-10-years-8-skills-to-stay-relevant/slideshow/129623359.cms"
-      },
-      {
-        "title": "AI hits college grad jobs hard, ServiceNow CEO says",
-        "date": "2026-03-15T14:22:36Z",
-        "source": "GNews: The News International",
-        "link": "https://www.thenews.com.pk/latest/1395756-ai-hits-college-grad-jobs-hard-servicenow-ceo-says"
-      },
-      {
-        "title": "Hometown Workforce Introduces an AI Startup that Creates Jobs and Businesses Instead of Replacing Them",
-        "date": "2026-03-13T17:01:31Z",
-        "source": "GNews: TechBullion",
-        "link": "https://techbullion.com/hometown-workforce-introduces-an-ai-startup-that-creates-jobs-and-businesses-instead-of-replacing-them/"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
