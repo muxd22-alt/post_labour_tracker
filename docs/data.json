@@ -1,9 +1,59 @@
 {
-  "generated": "2026-04-13T08:12:07.439Z",
+  "generated": "2026-04-14T07:55:45.927Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "Jensen Huang on AI and jobs: Nvidia CEO says layoffs are about creativity, not automation",
+        "date": "2026-03-21T11:04:39Z",
+        "source": "GNews: The Financial Express",
+        "link": "https://www.financialexpress.com/life/technology-jensen-huang-on-ai-and-jobs-nvidia-ceo-says-layoffs-are-about-creativity-not-automation-4179756/"
+      },
+      {
+        "title": "How to play the AI-driven ‘blue-collar renaissance’",
+        "date": "2026-03-19T18:08:50Z",
+        "source": "GNews: CNBC",
+        "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
+      },
+      {
+        "title": "Studying for finance jobs that may disappear in 10 years? 8 skills to stay relevant",
+        "date": "2026-03-17T04:07:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/wealth/earn/studying-for-finance-jobs-that-may-disappear-in-10-years-8-skills-to-stay-relevant/slideshow/129623359.cms"
+      },
+      {
+        "title": "AI hits college grad jobs hard, ServiceNow CEO says",
+        "date": "2026-03-15T14:22:36Z",
+        "source": "GNews: The News International",
+        "link": "https://www.thenews.com.pk/latest/1395756-ai-hits-college-grad-jobs-hard-servicenow-ceo-says"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "Jensen Huang on AI and jobs: Nvidia CEO says layoffs are about creativity, not automation",
+        "date": "2026-03-21T11:04:39Z",
+        "source": "GNews: The Financial Express",
+        "link": "https://www.financialexpress.com/life/technology-jensen-huang-on-ai-and-jobs-nvidia-ceo-says-layoffs-are-about-creativity-not-automation-4179756/"
+      },
+      {
+        "title": "How to play the AI-driven ‘blue-collar renaissance’",
+        "date": "2026-03-19T18:08:50Z",
+        "source": "GNews: CNBC",
+        "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
+      },
+      {
+        "title": "Studying for finance jobs that may disappear in 10 years? 8 skills to stay relevant",
+        "date": "2026-03-17T04:07:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/wealth/earn/studying-for-finance-jobs-that-may-disappear-in-10-years-8-skills-to-stay-relevant/slideshow/129623359.cms"
+      },
+      {
+        "title": "AI hits college grad jobs hard, ServiceNow CEO says",
+        "date": "2026-03-15T14:22:36Z",
+        "source": "GNews: The News International",
+        "link": "https://www.thenews.com.pk/latest/1395756-ai-hits-college-grad-jobs-hard-servicenow-ceo-says"
+      }
+    ],
     "abundance": []
   },
   "ai": null
