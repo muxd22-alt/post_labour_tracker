@@ -1,7 +1,13 @@
 {
-  "generated": "2026-04-15T07:56:32.714Z",
+  "generated": "2026-04-16T07:55:40.605Z",
   "feeds": {
     "threat": [
+      {
+        "title": "Companies cutting jobs as investments shift toward AI",
+        "date": "2026-04-15T12:40:09Z",
+        "source": "GNews: MarketScreener",
+        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
+      },
       {
         "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
         "date": "2026-04-14T09:35:54Z",
@@ -29,6 +35,12 @@
     ],
     "hope": [],
     "obsolescence": [
+      {
+        "title": "Companies cutting jobs as investments shift toward AI",
+        "date": "2026-04-15T12:40:09Z",
+        "source": "GNews: MarketScreener",
+        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
+      },
       {
         "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
         "date": "2026-04-14T09:35:54Z",
