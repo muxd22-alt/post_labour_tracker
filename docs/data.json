@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-16T07:55:40.605Z",
+  "generated": "2026-04-17T07:57:09.930Z",
   "feeds": {
     "threat": [
       {
@@ -25,12 +25,6 @@
         "date": "2026-03-19T18:08:50Z",
         "source": "GNews: CNBC",
         "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
-      },
-      {
-        "title": "Studying for finance jobs that may disappear in 10 years? 8 skills to stay relevant",
-        "date": "2026-03-17T04:07:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/wealth/earn/studying-for-finance-jobs-that-may-disappear-in-10-years-8-skills-to-stay-relevant/slideshow/129623359.cms"
       }
     ],
     "hope": [],
@@ -58,12 +52,6 @@
         "date": "2026-03-19T18:08:50Z",
         "source": "GNews: CNBC",
         "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
-      },
-      {
-        "title": "Studying for finance jobs that may disappear in 10 years? 8 skills to stay relevant",
-        "date": "2026-03-17T04:07:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/wealth/earn/studying-for-finance-jobs-that-may-disappear-in-10-years-8-skills-to-stay-relevant/slideshow/129623359.cms"
       }
     ],
     "abundance": []
