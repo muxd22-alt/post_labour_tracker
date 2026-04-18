@@ -1,59 +1,9 @@
 {
-  "generated": "2026-04-17T07:57:09.930Z",
+  "generated": "2026-04-18T07:16:22.359Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "Companies cutting jobs as investments shift toward AI",
-        "date": "2026-04-15T12:40:09Z",
-        "source": "GNews: MarketScreener",
-        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
-      },
-      {
-        "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
-        "date": "2026-04-14T09:35:54Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/ai-in-cinema-will-algorithms-replace-actors-the-way-automation-reshaped-jobs-ws-e-14000296.html"
-      },
-      {
-        "title": "Jensen Huang on AI and jobs: Nvidia CEO says layoffs are about creativity, not automation",
-        "date": "2026-03-21T11:04:39Z",
-        "source": "GNews: The Financial Express",
-        "link": "https://www.financialexpress.com/life/technology-jensen-huang-on-ai-and-jobs-nvidia-ceo-says-layoffs-are-about-creativity-not-automation-4179756/"
-      },
-      {
-        "title": "How to play the AI-driven ‘blue-collar renaissance’",
-        "date": "2026-03-19T18:08:50Z",
-        "source": "GNews: CNBC",
-        "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "Companies cutting jobs as investments shift toward AI",
-        "date": "2026-04-15T12:40:09Z",
-        "source": "GNews: MarketScreener",
-        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
-      },
-      {
-        "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
-        "date": "2026-04-14T09:35:54Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/ai-in-cinema-will-algorithms-replace-actors-the-way-automation-reshaped-jobs-ws-e-14000296.html"
-      },
-      {
-        "title": "Jensen Huang on AI and jobs: Nvidia CEO says layoffs are about creativity, not automation",
-        "date": "2026-03-21T11:04:39Z",
-        "source": "GNews: The Financial Express",
-        "link": "https://www.financialexpress.com/life/technology-jensen-huang-on-ai-and-jobs-nvidia-ceo-says-layoffs-are-about-creativity-not-automation-4179756/"
-      },
-      {
-        "title": "How to play the AI-driven ‘blue-collar renaissance’",
-        "date": "2026-03-19T18:08:50Z",
-        "source": "GNews: CNBC",
-        "link": "https://www.cnbc.com/2026/03/19/how-to-play-the-ai-driven-blue-collar-renaissance.html"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
