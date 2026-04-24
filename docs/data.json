@@ -1,35 +1,9 @@
 {
-  "generated": "2026-04-23T08:03:29.335Z",
+  "generated": "2026-04-24T08:11:55.750Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "Companies cutting jobs as investments shift toward AI",
-        "date": "2026-04-15T12:40:09Z",
-        "source": "GNews: MarketScreener",
-        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
-      },
-      {
-        "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
-        "date": "2026-04-14T09:35:54Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/ai-in-cinema-will-algorithms-replace-actors-the-way-automation-reshaped-jobs-ws-e-14000296.html"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "Companies cutting jobs as investments shift toward AI",
-        "date": "2026-04-15T12:40:09Z",
-        "source": "GNews: MarketScreener",
-        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
-      },
-      {
-        "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
-        "date": "2026-04-14T09:35:54Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/ai-in-cinema-will-algorithms-replace-actors-the-way-automation-reshaped-jobs-ws-e-14000296.html"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
