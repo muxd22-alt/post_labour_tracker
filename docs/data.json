@@ -1,7 +1,13 @@
 {
-  "generated": "2026-04-26T07:46:12.161Z",
+  "generated": "2026-04-27T08:33:37.511Z",
   "feeds": {
     "threat": [
+      {
+        "title": "AI rush meets workforce lag: Is readiness becoming the real crisis behind automation?",
+        "date": "2026-04-26T14:30:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/education/news/ai-rush-meets-workforce-lag-is-readiness-becoming-the-real-crisis-behind-automation/articleshow/130532743.cms"
+      },
       {
         "title": "From Oracle To Meta: Tech Giants Cut Over 40K Jobs In 2026. Here’s Why",
         "date": "2026-04-25T12:20:11Z",
@@ -23,6 +29,12 @@
     ],
     "hope": [],
     "obsolescence": [
+      {
+        "title": "AI rush meets workforce lag: Is readiness becoming the real crisis behind automation?",
+        "date": "2026-04-26T14:30:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/education/news/ai-rush-meets-workforce-lag-is-readiness-becoming-the-real-crisis-behind-automation/articleshow/130532743.cms"
+      },
       {
         "title": "From Oracle To Meta: Tech Giants Cut Over 40K Jobs In 2026. Here’s Why",
         "date": "2026-04-25T12:20:11Z",
