@@ -1,9 +1,71 @@
 {
-  "generated": "2026-05-04T08:35:59.414Z",
+  "generated": "2026-05-05T08:18:13.990Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "People are losing jobs to AI-But this quiet trait could save yours, shares ex-Oracle boss",
+        "date": "2026-05-03T05:41:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/relationships/people-are-losing-jobs-to-aibut-this-quiet-trait-could-save-yours-shares-ex-oracle-boss/articleshow/130727981.cms"
+      },
+      {
+        "title": "AI rush meets workforce lag: Is readiness becoming the real crisis behind automation?",
+        "date": "2026-04-26T14:30:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/education/news/ai-rush-meets-workforce-lag-is-readiness-becoming-the-real-crisis-behind-automation/articleshow/130532743.cms"
+      },
+      {
+        "title": "From Oracle To Meta: Tech Giants Cut Over 40K Jobs In 2026. Here’s Why",
+        "date": "2026-04-25T12:20:11Z",
+        "source": "GNews: News18",
+        "link": "https://www.news18.com/world/from-oracle-to-meta-tech-giants-cut-over-40k-jobs-in-2026-heres-why-ws-el-10057313.html"
+      },
+      {
+        "title": "Companies cutting jobs as investments shift toward AI",
+        "date": "2026-04-15T12:40:09Z",
+        "source": "GNews: MarketScreener",
+        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
+      },
+      {
+        "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
+        "date": "2026-04-14T09:35:54Z",
+        "source": "GNews: Firstpost",
+        "link": "https://www.firstpost.com/tech/ai-in-cinema-will-algorithms-replace-actors-the-way-automation-reshaped-jobs-ws-e-14000296.html"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "People are losing jobs to AI-But this quiet trait could save yours, shares ex-Oracle boss",
+        "date": "2026-05-03T05:41:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/relationships/people-are-losing-jobs-to-aibut-this-quiet-trait-could-save-yours-shares-ex-oracle-boss/articleshow/130727981.cms"
+      },
+      {
+        "title": "AI rush meets workforce lag: Is readiness becoming the real crisis behind automation?",
+        "date": "2026-04-26T14:30:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/education/news/ai-rush-meets-workforce-lag-is-readiness-becoming-the-real-crisis-behind-automation/articleshow/130532743.cms"
+      },
+      {
+        "title": "From Oracle To Meta: Tech Giants Cut Over 40K Jobs In 2026. Here’s Why",
+        "date": "2026-04-25T12:20:11Z",
+        "source": "GNews: News18",
+        "link": "https://www.news18.com/world/from-oracle-to-meta-tech-giants-cut-over-40k-jobs-in-2026-heres-why-ws-el-10057313.html"
+      },
+      {
+        "title": "Companies cutting jobs as investments shift toward AI",
+        "date": "2026-04-15T12:40:09Z",
+        "source": "GNews: MarketScreener",
+        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
+      },
+      {
+        "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
+        "date": "2026-04-14T09:35:54Z",
+        "source": "GNews: Firstpost",
+        "link": "https://www.firstpost.com/tech/ai-in-cinema-will-algorithms-replace-actors-the-way-automation-reshaped-jobs-ws-e-14000296.html"
+      }
+    ],
     "abundance": []
   },
   "ai": null
