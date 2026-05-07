@@ -1,7 +1,19 @@
 {
-  "generated": "2026-05-06T08:33:23.460Z",
+  "generated": "2026-05-07T08:40:56.430Z",
   "feeds": {
     "threat": [
+      {
+        "title": "Freshworks cuts 500 jobs; Q1 revenue hits $228 million",
+        "date": "2026-05-06T00:49:23Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-cuts-500-jobs-q1-revenue-hits-228-million/articleshow/130841734.cms"
+      },
+      {
+        "title": "Freshworks to cut 11% jobs as AI reshapes software industry",
+        "date": "2026-05-06T00:49:23Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-to-cut-11-jobs-as-ai-reshapes-software-industry/articleshow/130841734.cms"
+      },
       {
         "title": "People are losing jobs to AI-But this quiet trait could save yours, shares ex-Oracle boss",
         "date": "2026-05-03T05:41:00Z",
@@ -19,23 +31,23 @@
         "date": "2026-04-25T12:20:11Z",
         "source": "GNews: News18",
         "link": "https://www.news18.com/world/from-oracle-to-meta-tech-giants-cut-over-40k-jobs-in-2026-heres-why-ws-el-10057313.html"
-      },
-      {
-        "title": "Companies cutting jobs as investments shift toward AI",
-        "date": "2026-04-15T12:40:09Z",
-        "source": "GNews: MarketScreener",
-        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
-      },
-      {
-        "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
-        "date": "2026-04-14T09:35:54Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/ai-in-cinema-will-algorithms-replace-actors-the-way-automation-reshaped-jobs-ws-e-14000296.html"
       }
     ],
     "hope": [],
     "obsolescence": [
       {
+        "title": "Freshworks cuts 500 jobs; Q1 revenue hits $228 million",
+        "date": "2026-05-06T00:49:23Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-cuts-500-jobs-q1-revenue-hits-228-million/articleshow/130841734.cms"
+      },
+      {
+        "title": "Freshworks to cut 11% jobs as AI reshapes software industry",
+        "date": "2026-05-06T00:49:23Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-to-cut-11-jobs-as-ai-reshapes-software-industry/articleshow/130841734.cms"
+      },
+      {
         "title": "People are losing jobs to AI-But this quiet trait could save yours, shares ex-Oracle boss",
         "date": "2026-05-03T05:41:00Z",
         "source": "GNews: Times of India",
@@ -52,18 +64,6 @@
         "date": "2026-04-25T12:20:11Z",
         "source": "GNews: News18",
         "link": "https://www.news18.com/world/from-oracle-to-meta-tech-giants-cut-over-40k-jobs-in-2026-heres-why-ws-el-10057313.html"
-      },
-      {
-        "title": "Companies cutting jobs as investments shift toward AI",
-        "date": "2026-04-15T12:40:09Z",
-        "source": "GNews: MarketScreener",
-        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7e50dcdc8bfe20"
-      },
-      {
-        "title": "AI in cinema: Will algorithms replace actors the way automation reshaped jobs?",
-        "date": "2026-04-14T09:35:54Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/ai-in-cinema-will-algorithms-replace-actors-the-way-automation-reshaped-jobs-ws-e-14000296.html"
       }
     ],
     "abundance": []
