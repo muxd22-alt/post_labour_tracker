@@ -1,9 +1,71 @@
 {
-  "generated": "2026-05-11T09:50:09.737Z",
+  "generated": "2026-05-12T08:46:50.314Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "From Cloudflare to Meta and Amazon: How the AI layoff wave has wiped out more than 90,000 jobs this year | Explained",
+        "date": "2026-05-08T13:06:49Z",
+        "source": "GNews: Moneycontrol",
+        "link": "https://www.moneycontrol.com/world/from-cloudflare-to-meta-and-amazon-how-the-ai-layoff-wave-has-wiped-out-more-than-90-000-jobs-this-year-explained-article-13913296.html"
+      },
+      {
+        "title": "Freshworks cuts 500 jobs; Q1 revenue hits $228 million",
+        "date": "2026-05-06T00:49:23Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-cuts-500-jobs-q1-revenue-hits-228-million/articleshow/130841734.cms"
+      },
+      {
+        "title": "Freshworks to cut 11% jobs as AI reshapes software industry",
+        "date": "2026-05-06T00:49:23Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-to-cut-11-jobs-as-ai-reshapes-software-industry/articleshow/130841734.cms"
+      },
+      {
+        "title": "People are losing jobs to AI-But this quiet trait could save yours, shares ex-Oracle boss",
+        "date": "2026-05-03T05:41:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/relationships/people-are-losing-jobs-to-aibut-this-quiet-trait-could-save-yours-shares-ex-oracle-boss/articleshow/130727981.cms"
+      },
+      {
+        "title": "AI rush meets workforce lag: Is readiness becoming the real crisis behind automation?",
+        "date": "2026-04-26T14:30:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/education/news/ai-rush-meets-workforce-lag-is-readiness-becoming-the-real-crisis-behind-automation/articleshow/130532743.cms"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "From Cloudflare to Meta and Amazon: How the AI layoff wave has wiped out more than 90,000 jobs this year | Explained",
+        "date": "2026-05-08T13:06:49Z",
+        "source": "GNews: Moneycontrol",
+        "link": "https://www.moneycontrol.com/world/from-cloudflare-to-meta-and-amazon-how-the-ai-layoff-wave-has-wiped-out-more-than-90-000-jobs-this-year-explained-article-13913296.html"
+      },
+      {
+        "title": "Freshworks cuts 500 jobs; Q1 revenue hits $228 million",
+        "date": "2026-05-06T00:49:23Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-cuts-500-jobs-q1-revenue-hits-228-million/articleshow/130841734.cms"
+      },
+      {
+        "title": "Freshworks to cut 11% jobs as AI reshapes software industry",
+        "date": "2026-05-06T00:49:23Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-to-cut-11-jobs-as-ai-reshapes-software-industry/articleshow/130841734.cms"
+      },
+      {
+        "title": "People are losing jobs to AI-But this quiet trait could save yours, shares ex-Oracle boss",
+        "date": "2026-05-03T05:41:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/relationships/people-are-losing-jobs-to-aibut-this-quiet-trait-could-save-yours-shares-ex-oracle-boss/articleshow/130727981.cms"
+      },
+      {
+        "title": "AI rush meets workforce lag: Is readiness becoming the real crisis behind automation?",
+        "date": "2026-04-26T14:30:00Z",
+        "source": "GNews: Times of India",
+        "link": "https://timesofindia.indiatimes.com/education/news/ai-rush-meets-workforce-lag-is-readiness-becoming-the-real-crisis-behind-automation/articleshow/130532743.cms"
+      }
+    ],
     "abundance": []
   },
   "ai": null
