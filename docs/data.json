@@ -1,7 +1,13 @@
 {
-  "generated": "2026-05-13T08:50:49.605Z",
+  "generated": "2026-05-14T08:43:55.313Z",
   "feeds": {
     "threat": [
+      {
+        "title": "The next billion jobs will come from entrepreneurs, not AI",
+        "date": "2026-05-13T18:01:00Z",
+        "source": "GNews: Bangkok Post",
+        "link": "https://www.bangkokpost.com/business/general/3254793/the-next-billion-jobs-will-come-from-entrepreneurs-not-ai"
+      },
       {
         "title": "From Cloudflare to Meta and Amazon: How the AI layoff wave has wiped out more than 90,000 jobs this year | Explained",
         "date": "2026-05-08T13:06:49Z",
@@ -25,17 +31,17 @@
         "date": "2026-05-03T05:41:00Z",
         "source": "GNews: Times of India",
         "link": "https://timesofindia.indiatimes.com/relationships/people-are-losing-jobs-to-aibut-this-quiet-trait-could-save-yours-shares-ex-oracle-boss/articleshow/130727981.cms"
-      },
-      {
-        "title": "AI rush meets workforce lag: Is readiness becoming the real crisis behind automation?",
-        "date": "2026-04-26T14:30:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/education/news/ai-rush-meets-workforce-lag-is-readiness-becoming-the-real-crisis-behind-automation/articleshow/130532743.cms"
       }
     ],
     "hope": [],
     "obsolescence": [
       {
+        "title": "The next billion jobs will come from entrepreneurs, not AI",
+        "date": "2026-05-13T18:01:00Z",
+        "source": "GNews: Bangkok Post",
+        "link": "https://www.bangkokpost.com/business/general/3254793/the-next-billion-jobs-will-come-from-entrepreneurs-not-ai"
+      },
+      {
         "title": "From Cloudflare to Meta and Amazon: How the AI layoff wave has wiped out more than 90,000 jobs this year | Explained",
         "date": "2026-05-08T13:06:49Z",
         "source": "GNews: Moneycontrol",
@@ -58,12 +64,6 @@
         "date": "2026-05-03T05:41:00Z",
         "source": "GNews: Times of India",
         "link": "https://timesofindia.indiatimes.com/relationships/people-are-losing-jobs-to-aibut-this-quiet-trait-could-save-yours-shares-ex-oracle-boss/articleshow/130727981.cms"
-      },
-      {
-        "title": "AI rush meets workforce lag: Is readiness becoming the real crisis behind automation?",
-        "date": "2026-04-26T14:30:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/education/news/ai-rush-meets-workforce-lag-is-readiness-becoming-the-real-crisis-behind-automation/articleshow/130532743.cms"
       }
     ],
     "abundance": []
