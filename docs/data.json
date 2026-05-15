@@ -1,71 +1,9 @@
 {
-  "generated": "2026-05-14T08:43:55.313Z",
+  "generated": "2026-05-15T08:54:34.779Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "The next billion jobs will come from entrepreneurs, not AI",
-        "date": "2026-05-13T18:01:00Z",
-        "source": "GNews: Bangkok Post",
-        "link": "https://www.bangkokpost.com/business/general/3254793/the-next-billion-jobs-will-come-from-entrepreneurs-not-ai"
-      },
-      {
-        "title": "From Cloudflare to Meta and Amazon: How the AI layoff wave has wiped out more than 90,000 jobs this year | Explained",
-        "date": "2026-05-08T13:06:49Z",
-        "source": "GNews: Moneycontrol",
-        "link": "https://www.moneycontrol.com/world/from-cloudflare-to-meta-and-amazon-how-the-ai-layoff-wave-has-wiped-out-more-than-90-000-jobs-this-year-explained-article-13913296.html"
-      },
-      {
-        "title": "Freshworks cuts 500 jobs; Q1 revenue hits $228 million",
-        "date": "2026-05-06T00:49:23Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-cuts-500-jobs-q1-revenue-hits-228-million/articleshow/130841734.cms"
-      },
-      {
-        "title": "Freshworks to cut 11% jobs as AI reshapes software industry",
-        "date": "2026-05-06T00:49:23Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-to-cut-11-jobs-as-ai-reshapes-software-industry/articleshow/130841734.cms"
-      },
-      {
-        "title": "People are losing jobs to AI-But this quiet trait could save yours, shares ex-Oracle boss",
-        "date": "2026-05-03T05:41:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/relationships/people-are-losing-jobs-to-aibut-this-quiet-trait-could-save-yours-shares-ex-oracle-boss/articleshow/130727981.cms"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "The next billion jobs will come from entrepreneurs, not AI",
-        "date": "2026-05-13T18:01:00Z",
-        "source": "GNews: Bangkok Post",
-        "link": "https://www.bangkokpost.com/business/general/3254793/the-next-billion-jobs-will-come-from-entrepreneurs-not-ai"
-      },
-      {
-        "title": "From Cloudflare to Meta and Amazon: How the AI layoff wave has wiped out more than 90,000 jobs this year | Explained",
-        "date": "2026-05-08T13:06:49Z",
-        "source": "GNews: Moneycontrol",
-        "link": "https://www.moneycontrol.com/world/from-cloudflare-to-meta-and-amazon-how-the-ai-layoff-wave-has-wiped-out-more-than-90-000-jobs-this-year-explained-article-13913296.html"
-      },
-      {
-        "title": "Freshworks cuts 500 jobs; Q1 revenue hits $228 million",
-        "date": "2026-05-06T00:49:23Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-cuts-500-jobs-q1-revenue-hits-228-million/articleshow/130841734.cms"
-      },
-      {
-        "title": "Freshworks to cut 11% jobs as AI reshapes software industry",
-        "date": "2026-05-06T00:49:23Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/tech/technology/freshworks-to-cut-11-jobs-as-ai-reshapes-software-industry/articleshow/130841734.cms"
-      },
-      {
-        "title": "People are losing jobs to AI-But this quiet trait could save yours, shares ex-Oracle boss",
-        "date": "2026-05-03T05:41:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/relationships/people-are-losing-jobs-to-aibut-this-quiet-trait-could-save-yours-shares-ex-oracle-boss/articleshow/130727981.cms"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
