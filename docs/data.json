@@ -1,9 +1,71 @@
 {
-  "generated": "2026-05-15T08:54:34.779Z",
+  "generated": "2026-05-16T08:09:47.394Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "After cutting 30,000 roles, Amazon announces another round of layoffs",
+        "date": "2026-05-14T09:08:13Z",
+        "source": "GNews: Firstpost",
+        "link": "https://www.firstpost.com/tech/after-cutting-30000-roles-amazon-announces-another-round-of-layoffs-14011171.html"
+      },
+      {
+        "title": "LinkedIn Layoffs 2026: 900 Jobs Cut as Microsoft-Owned Platform Restructures Teams Around AI",
+        "date": "2026-05-14T06:00:40Z",
+        "source": "GNews: Republic World",
+        "link": "https://www.republicworld.com/tech/linkedin-layoffs-2026-900-jobs-cut-as-microsoft-owned-platform-restructures-teams-around-ai-2026-05-14-124183"
+      },
+      {
+        "title": "Companies cutting jobs as investments shift toward AI",
+        "date": "2026-05-13T21:19:44Z",
+        "source": "GNews: MarketScreener",
+        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7f5bdcde8af42c"
+      },
+      {
+        "title": "The next billion jobs will come from entrepreneurs, not AI",
+        "date": "2026-05-13T18:01:00Z",
+        "source": "GNews: Bangkok Post",
+        "link": "https://www.bangkokpost.com/business/general/3254793/the-next-billion-jobs-will-come-from-entrepreneurs-not-ai"
+      },
+      {
+        "title": "From Cloudflare to Meta and Amazon: How the AI layoff wave has wiped out more than 90,000 jobs this year | Explained",
+        "date": "2026-05-08T13:06:49Z",
+        "source": "GNews: Moneycontrol",
+        "link": "https://www.moneycontrol.com/world/from-cloudflare-to-meta-and-amazon-how-the-ai-layoff-wave-has-wiped-out-more-than-90-000-jobs-this-year-explained-article-13913296.html"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "After cutting 30,000 roles, Amazon announces another round of layoffs",
+        "date": "2026-05-14T09:08:13Z",
+        "source": "GNews: Firstpost",
+        "link": "https://www.firstpost.com/tech/after-cutting-30000-roles-amazon-announces-another-round-of-layoffs-14011171.html"
+      },
+      {
+        "title": "LinkedIn Layoffs 2026: 900 Jobs Cut as Microsoft-Owned Platform Restructures Teams Around AI",
+        "date": "2026-05-14T06:00:40Z",
+        "source": "GNews: Republic World",
+        "link": "https://www.republicworld.com/tech/linkedin-layoffs-2026-900-jobs-cut-as-microsoft-owned-platform-restructures-teams-around-ai-2026-05-14-124183"
+      },
+      {
+        "title": "Companies cutting jobs as investments shift toward AI",
+        "date": "2026-05-13T21:19:44Z",
+        "source": "GNews: MarketScreener",
+        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7f5bdcde8af42c"
+      },
+      {
+        "title": "The next billion jobs will come from entrepreneurs, not AI",
+        "date": "2026-05-13T18:01:00Z",
+        "source": "GNews: Bangkok Post",
+        "link": "https://www.bangkokpost.com/business/general/3254793/the-next-billion-jobs-will-come-from-entrepreneurs-not-ai"
+      },
+      {
+        "title": "From Cloudflare to Meta and Amazon: How the AI layoff wave has wiped out more than 90,000 jobs this year | Explained",
+        "date": "2026-05-08T13:06:49Z",
+        "source": "GNews: Moneycontrol",
+        "link": "https://www.moneycontrol.com/world/from-cloudflare-to-meta-and-amazon-how-the-ai-layoff-wave-has-wiped-out-more-than-90-000-jobs-this-year-explained-article-13913296.html"
+      }
+    ],
     "abundance": []
   },
   "ai": null
