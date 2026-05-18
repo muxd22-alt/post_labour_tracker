@@ -1,7 +1,13 @@
 {
-  "generated": "2026-05-17T08:26:41.610Z",
+  "generated": "2026-05-18T10:14:09.429Z",
   "feeds": {
     "threat": [
+      {
+        "title": "AI Will Create More Jobs, Not Destroy Them: Nvidia CEO Jensen Huang",
+        "date": "2026-05-17T01:30:00Z",
+        "source": "GNews: Times Now",
+        "link": "https://www.timesnownews.com/technology-science/ai-will-create-more-jobs-not-destroy-them-nvidia-ceo-jensen-huang-article-154333031"
+      },
       {
         "title": "Will your job survive AI? Experts say new tech may replace tasks, not humans",
         "date": "2026-05-16T04:37:07Z",
@@ -25,17 +31,17 @@
         "date": "2026-05-13T21:19:44Z",
         "source": "GNews: MarketScreener",
         "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7f5bdcde8af42c"
-      },
-      {
-        "title": "The next billion jobs will come from entrepreneurs, not AI",
-        "date": "2026-05-13T18:01:00Z",
-        "source": "GNews: Bangkok Post",
-        "link": "https://www.bangkokpost.com/business/general/3254793/the-next-billion-jobs-will-come-from-entrepreneurs-not-ai"
       }
     ],
     "hope": [],
     "obsolescence": [
       {
+        "title": "AI Will Create More Jobs, Not Destroy Them: Nvidia CEO Jensen Huang",
+        "date": "2026-05-17T01:30:00Z",
+        "source": "GNews: Times Now",
+        "link": "https://www.timesnownews.com/technology-science/ai-will-create-more-jobs-not-destroy-them-nvidia-ceo-jensen-huang-article-154333031"
+      },
+      {
         "title": "Will your job survive AI? Experts say new tech may replace tasks, not humans",
         "date": "2026-05-16T04:37:07Z",
         "source": "GNews: Firstpost",
@@ -58,12 +64,6 @@
         "date": "2026-05-13T21:19:44Z",
         "source": "GNews: MarketScreener",
         "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7f5bdcde8af42c"
-      },
-      {
-        "title": "The next billion jobs will come from entrepreneurs, not AI",
-        "date": "2026-05-13T18:01:00Z",
-        "source": "GNews: Bangkok Post",
-        "link": "https://www.bangkokpost.com/business/general/3254793/the-next-billion-jobs-will-come-from-entrepreneurs-not-ai"
       }
     ],
     "abundance": []
