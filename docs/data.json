@@ -1,7 +1,13 @@
 {
-  "generated": "2026-05-18T10:14:09.429Z",
+  "generated": "2026-05-19T09:54:58.764Z",
   "feeds": {
     "threat": [
+      {
+        "title": "TCS Layoffs 2026: Tata Consultancy Services Cuts 23,000 Jobs Amid AI Automation, Bench Policy Concerns and IT Sector Hiring Slowdown",
+        "date": "2026-05-18T12:38:46Z",
+        "source": "GNews: NewsX",
+        "link": "https://www.newsx.com/india/tcs-layoffs-2026-tata-consultancy-services-cuts-23000-jobs-amid-ai-automation-bench-policy-concerns-it-sector-hiring-slowdown-221244/"
+      },
       {
         "title": "AI Will Create More Jobs, Not Destroy Them: Nvidia CEO Jensen Huang",
         "date": "2026-05-17T01:30:00Z",
@@ -25,17 +31,17 @@
         "date": "2026-05-14T06:00:40Z",
         "source": "GNews: Republic World",
         "link": "https://www.republicworld.com/tech/linkedin-layoffs-2026-900-jobs-cut-as-microsoft-owned-platform-restructures-teams-around-ai-2026-05-14-124183"
-      },
-      {
-        "title": "Companies cutting jobs as investments shift toward AI",
-        "date": "2026-05-13T21:19:44Z",
-        "source": "GNews: MarketScreener",
-        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7f5bdcde8af42c"
       }
     ],
     "hope": [],
     "obsolescence": [
       {
+        "title": "TCS Layoffs 2026: Tata Consultancy Services Cuts 23,000 Jobs Amid AI Automation, Bench Policy Concerns and IT Sector Hiring Slowdown",
+        "date": "2026-05-18T12:38:46Z",
+        "source": "GNews: NewsX",
+        "link": "https://www.newsx.com/india/tcs-layoffs-2026-tata-consultancy-services-cuts-23000-jobs-amid-ai-automation-bench-policy-concerns-it-sector-hiring-slowdown-221244/"
+      },
+      {
         "title": "AI Will Create More Jobs, Not Destroy Them: Nvidia CEO Jensen Huang",
         "date": "2026-05-17T01:30:00Z",
         "source": "GNews: Times Now",
@@ -58,12 +64,6 @@
         "date": "2026-05-14T06:00:40Z",
         "source": "GNews: Republic World",
         "link": "https://www.republicworld.com/tech/linkedin-layoffs-2026-900-jobs-cut-as-microsoft-owned-platform-restructures-teams-around-ai-2026-05-14-124183"
-      },
-      {
-        "title": "Companies cutting jobs as investments shift toward AI",
-        "date": "2026-05-13T21:19:44Z",
-        "source": "GNews: MarketScreener",
-        "link": "https://www.marketscreener.com/news/companies-cutting-jobs-as-investments-shift-toward-ai-ce7f5bdcde8af42c"
       }
     ],
     "abundance": []
