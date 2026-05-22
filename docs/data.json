@@ -1,71 +1,9 @@
 {
-  "generated": "2026-05-21T09:51:21.355Z",
+  "generated": "2026-05-22T09:36:57.859Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "Layoffs Loading: Standard Chartered To Double Down On AI, Slash Over 7,000 Jobs",
-        "date": "2026-05-19T12:30:09Z",
-        "source": "GNews: NDTV Profit",
-        "link": "https://www.ndtvprofit.com/business/layoffs-loading-standard-chartered-to-double-down-on-ai-slash-over-7-000-jobs-11517607"
-      },
-      {
-        "title": "TCS Layoffs 2026: Tata Consultancy Services Cuts 23,000 Jobs Amid AI Automation, Bench Policy Concerns and IT Sector Hiring Slowdown",
-        "date": "2026-05-18T12:38:46Z",
-        "source": "GNews: NewsX",
-        "link": "https://www.newsx.com/india/tcs-layoffs-2026-tata-consultancy-services-cuts-23000-jobs-amid-ai-automation-bench-policy-concerns-it-sector-hiring-slowdown-221244/"
-      },
-      {
-        "title": "AI Will Create More Jobs, Not Destroy Them: Nvidia CEO Jensen Huang",
-        "date": "2026-05-17T01:30:00Z",
-        "source": "GNews: Times Now",
-        "link": "https://www.timesnownews.com/technology-science/ai-will-create-more-jobs-not-destroy-them-nvidia-ceo-jensen-huang-article-154333031"
-      },
-      {
-        "title": "Will your job survive AI? Experts say new tech may replace tasks, not humans",
-        "date": "2026-05-16T04:37:07Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/will-your-job-survive-ai-experts-say-new-tech-may-replace-tasks-not-humans-ws-e-14011793.html"
-      },
-      {
-        "title": "After cutting 30,000 roles, Amazon announces another round of layoffs",
-        "date": "2026-05-14T09:08:13Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/after-cutting-30000-roles-amazon-announces-another-round-of-layoffs-14011171.html"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "Layoffs Loading: Standard Chartered To Double Down On AI, Slash Over 7,000 Jobs",
-        "date": "2026-05-19T12:30:09Z",
-        "source": "GNews: NDTV Profit",
-        "link": "https://www.ndtvprofit.com/business/layoffs-loading-standard-chartered-to-double-down-on-ai-slash-over-7-000-jobs-11517607"
-      },
-      {
-        "title": "TCS Layoffs 2026: Tata Consultancy Services Cuts 23,000 Jobs Amid AI Automation, Bench Policy Concerns and IT Sector Hiring Slowdown",
-        "date": "2026-05-18T12:38:46Z",
-        "source": "GNews: NewsX",
-        "link": "https://www.newsx.com/india/tcs-layoffs-2026-tata-consultancy-services-cuts-23000-jobs-amid-ai-automation-bench-policy-concerns-it-sector-hiring-slowdown-221244/"
-      },
-      {
-        "title": "AI Will Create More Jobs, Not Destroy Them: Nvidia CEO Jensen Huang",
-        "date": "2026-05-17T01:30:00Z",
-        "source": "GNews: Times Now",
-        "link": "https://www.timesnownews.com/technology-science/ai-will-create-more-jobs-not-destroy-them-nvidia-ceo-jensen-huang-article-154333031"
-      },
-      {
-        "title": "Will your job survive AI? Experts say new tech may replace tasks, not humans",
-        "date": "2026-05-16T04:37:07Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/will-your-job-survive-ai-experts-say-new-tech-may-replace-tasks-not-humans-ws-e-14011793.html"
-      },
-      {
-        "title": "After cutting 30,000 roles, Amazon announces another round of layoffs",
-        "date": "2026-05-14T09:08:13Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/after-cutting-30000-roles-amazon-announces-another-round-of-layoffs-14011171.html"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
