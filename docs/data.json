@@ -1,9 +1,71 @@
 {
-  "generated": "2026-05-23T08:25:02.021Z",
+  "generated": "2026-05-24T08:35:13.887Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "Bengaluru vegetable seller earning more than Rs 12 LPA? Man spots him wearing AI data-collection headgear, video stuns internet",
+        "date": "2026-05-21T05:24:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/news/new-updates/bengaluru-vegetable-seller-earning-more-than-rs-12-lpa-man-spots-him-wearing-ai-data-collection-headgear-video-stuns-internet/articleshow/131240045.cms"
+      },
+      {
+        "title": "Intuit layoffs: Finance software giant cuts 3,000 jobs amid growing AI shift",
+        "date": "2026-05-21T03:18:19Z",
+        "source": "GNews: Firstpost",
+        "link": "https://www.firstpost.com/tech/intuit-layoffs-finance-software-giant-cuts-3000-jobs-amid-growing-ai-shift-14013446.html"
+      },
+      {
+        "title": "Layoffs Loading: Standard Chartered To Double Down On AI, Slash Over 7,000 Jobs",
+        "date": "2026-05-19T12:30:09Z",
+        "source": "GNews: NDTV Profit",
+        "link": "https://www.ndtvprofit.com/business/layoffs-loading-standard-chartered-to-double-down-on-ai-slash-over-7-000-jobs-11517607"
+      },
+      {
+        "title": "TCS Layoffs 2026: Tata Consultancy Services Cuts 23,000 Jobs Amid AI Automation, Bench Policy Concerns and IT Sector Hiring Slowdown",
+        "date": "2026-05-18T12:38:46Z",
+        "source": "GNews: NewsX",
+        "link": "https://www.newsx.com/india/tcs-layoffs-2026-tata-consultancy-services-cuts-23000-jobs-amid-ai-automation-bench-policy-concerns-it-sector-hiring-slowdown-221244/"
+      },
+      {
+        "title": "AI Will Create More Jobs, Not Destroy Them: Nvidia CEO Jensen Huang",
+        "date": "2026-05-17T01:30:00Z",
+        "source": "GNews: Times Now",
+        "link": "https://www.timesnownews.com/technology-science/ai-will-create-more-jobs-not-destroy-them-nvidia-ceo-jensen-huang-article-154333031"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "Bengaluru vegetable seller earning more than Rs 12 LPA? Man spots him wearing AI data-collection headgear, video stuns internet",
+        "date": "2026-05-21T05:24:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/news/new-updates/bengaluru-vegetable-seller-earning-more-than-rs-12-lpa-man-spots-him-wearing-ai-data-collection-headgear-video-stuns-internet/articleshow/131240045.cms"
+      },
+      {
+        "title": "Intuit layoffs: Finance software giant cuts 3,000 jobs amid growing AI shift",
+        "date": "2026-05-21T03:18:19Z",
+        "source": "GNews: Firstpost",
+        "link": "https://www.firstpost.com/tech/intuit-layoffs-finance-software-giant-cuts-3000-jobs-amid-growing-ai-shift-14013446.html"
+      },
+      {
+        "title": "Layoffs Loading: Standard Chartered To Double Down On AI, Slash Over 7,000 Jobs",
+        "date": "2026-05-19T12:30:09Z",
+        "source": "GNews: NDTV Profit",
+        "link": "https://www.ndtvprofit.com/business/layoffs-loading-standard-chartered-to-double-down-on-ai-slash-over-7-000-jobs-11517607"
+      },
+      {
+        "title": "TCS Layoffs 2026: Tata Consultancy Services Cuts 23,000 Jobs Amid AI Automation, Bench Policy Concerns and IT Sector Hiring Slowdown",
+        "date": "2026-05-18T12:38:46Z",
+        "source": "GNews: NewsX",
+        "link": "https://www.newsx.com/india/tcs-layoffs-2026-tata-consultancy-services-cuts-23000-jobs-amid-ai-automation-bench-policy-concerns-it-sector-hiring-slowdown-221244/"
+      },
+      {
+        "title": "AI Will Create More Jobs, Not Destroy Them: Nvidia CEO Jensen Huang",
+        "date": "2026-05-17T01:30:00Z",
+        "source": "GNews: Times Now",
+        "link": "https://www.timesnownews.com/technology-science/ai-will-create-more-jobs-not-destroy-them-nvidia-ceo-jensen-huang-article-154333031"
+      }
+    ],
     "abundance": []
   },
   "ai": null
