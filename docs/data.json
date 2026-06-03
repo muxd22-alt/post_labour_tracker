@@ -1,71 +1,9 @@
 {
-  "generated": "2026-06-02T10:44:32.482Z",
+  "generated": "2026-06-03T11:08:39.620Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "No jobs apocalypse: Sam Altman says AI may not trigger the mass unemployment many feared",
-        "date": "2026-05-26T08:44:35Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/no-jobs-apocalypse-sam-altman-says-ai-may-not-trigger-the-mass-unemployment-many-feared-14015362.html"
-      },
-      {
-        "title": "74% Indian graduates fear AI may make jobs harder to secure, finance emerges as top career choice amid rising job concerns: Survey",
-        "date": "2026-05-25T13:10:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/education/news/74-indian-graduates-fear-ai-may-make-jobs-harder-to-secure-finance-emerges-as-top-career-choice-amid-rising-job-concerns-survey/articleshow/131310516.cms"
-      },
-      {
-        "title": "Bengaluru vegetable seller earning more than Rs 12 LPA? Man spots him wearing AI data-collection headgear, video stuns internet",
-        "date": "2026-05-21T05:24:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/new-updates/bengaluru-vegetable-seller-earning-more-than-rs-12-lpa-man-spots-him-wearing-ai-data-collection-headgear-video-stuns-internet/articleshow/131240045.cms"
-      },
-      {
-        "title": "Intuit layoffs: Finance software giant cuts 3,000 jobs amid growing AI shift",
-        "date": "2026-05-21T03:18:19Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/intuit-layoffs-finance-software-giant-cuts-3000-jobs-amid-growing-ai-shift-14013446.html"
-      },
-      {
-        "title": "Layoffs Loading: Standard Chartered To Double Down On AI, Slash Over 7,000 Jobs",
-        "date": "2026-05-19T12:30:09Z",
-        "source": "GNews: NDTV Profit",
-        "link": "https://www.ndtvprofit.com/business/layoffs-loading-standard-chartered-to-double-down-on-ai-slash-over-7-000-jobs-11517607"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "No jobs apocalypse: Sam Altman says AI may not trigger the mass unemployment many feared",
-        "date": "2026-05-26T08:44:35Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/no-jobs-apocalypse-sam-altman-says-ai-may-not-trigger-the-mass-unemployment-many-feared-14015362.html"
-      },
-      {
-        "title": "74% Indian graduates fear AI may make jobs harder to secure, finance emerges as top career choice amid rising job concerns: Survey",
-        "date": "2026-05-25T13:10:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/education/news/74-indian-graduates-fear-ai-may-make-jobs-harder-to-secure-finance-emerges-as-top-career-choice-amid-rising-job-concerns-survey/articleshow/131310516.cms"
-      },
-      {
-        "title": "Bengaluru vegetable seller earning more than Rs 12 LPA? Man spots him wearing AI data-collection headgear, video stuns internet",
-        "date": "2026-05-21T05:24:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/new-updates/bengaluru-vegetable-seller-earning-more-than-rs-12-lpa-man-spots-him-wearing-ai-data-collection-headgear-video-stuns-internet/articleshow/131240045.cms"
-      },
-      {
-        "title": "Intuit layoffs: Finance software giant cuts 3,000 jobs amid growing AI shift",
-        "date": "2026-05-21T03:18:19Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/intuit-layoffs-finance-software-giant-cuts-3000-jobs-amid-growing-ai-shift-14013446.html"
-      },
-      {
-        "title": "Layoffs Loading: Standard Chartered To Double Down On AI, Slash Over 7,000 Jobs",
-        "date": "2026-05-19T12:30:09Z",
-        "source": "GNews: NDTV Profit",
-        "link": "https://www.ndtvprofit.com/business/layoffs-loading-standard-chartered-to-double-down-on-ai-slash-over-7-000-jobs-11517607"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
