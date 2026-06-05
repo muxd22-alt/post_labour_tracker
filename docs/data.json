@@ -1,7 +1,13 @@
 {
-  "generated": "2026-06-04T10:02:28.720Z",
+  "generated": "2026-06-05T10:00:06.209Z",
   "feeds": {
     "threat": [
+      {
+        "title": "AI Threat to India’s New Middle Class: How Automation Is Reshaping IT Jobs, Gender Roles and Social Mobility",
+        "date": "2026-06-04T08:15:29Z",
+        "source": "GNews: Outlook India",
+        "link": "https://www.outlookindia.com/national/ai-threat-to-indias-new-middle-class-how-automation-is-reshaping-it-jobs-gender-roles-and-social-mobility"
+      },
       {
         "title": "Quote of the Day by Google DeepMind CEO Demis Hassabis: \"AI is going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster.\" Could AI transform civilization faster than human",
         "date": "2026-06-01T23:37:00Z",
@@ -25,17 +31,17 @@
         "date": "2026-05-21T05:24:00Z",
         "source": "GNews: The Economic Times",
         "link": "https://economictimes.indiatimes.com/news/new-updates/bengaluru-vegetable-seller-earning-more-than-rs-12-lpa-man-spots-him-wearing-ai-data-collection-headgear-video-stuns-internet/articleshow/131240045.cms"
-      },
-      {
-        "title": "Intuit layoffs: Finance software giant cuts 3,000 jobs amid growing AI shift",
-        "date": "2026-05-21T03:18:19Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/intuit-layoffs-finance-software-giant-cuts-3000-jobs-amid-growing-ai-shift-14013446.html"
       }
     ],
     "hope": [],
     "obsolescence": [
       {
+        "title": "AI Threat to India’s New Middle Class: How Automation Is Reshaping IT Jobs, Gender Roles and Social Mobility",
+        "date": "2026-06-04T08:15:29Z",
+        "source": "GNews: Outlook India",
+        "link": "https://www.outlookindia.com/national/ai-threat-to-indias-new-middle-class-how-automation-is-reshaping-it-jobs-gender-roles-and-social-mobility"
+      },
+      {
         "title": "Quote of the Day by Google DeepMind CEO Demis Hassabis: \"AI is going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster.\" Could AI transform civilization faster than human",
         "date": "2026-06-01T23:37:00Z",
         "source": "GNews: The Economic Times",
@@ -58,12 +64,6 @@
         "date": "2026-05-21T05:24:00Z",
         "source": "GNews: The Economic Times",
         "link": "https://economictimes.indiatimes.com/news/new-updates/bengaluru-vegetable-seller-earning-more-than-rs-12-lpa-man-spots-him-wearing-ai-data-collection-headgear-video-stuns-internet/articleshow/131240045.cms"
-      },
-      {
-        "title": "Intuit layoffs: Finance software giant cuts 3,000 jobs amid growing AI shift",
-        "date": "2026-05-21T03:18:19Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/intuit-layoffs-finance-software-giant-cuts-3000-jobs-amid-growing-ai-shift-14013446.html"
       }
     ],
     "abundance": []
