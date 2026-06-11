@@ -1,71 +1,9 @@
 {
-  "generated": "2026-06-10T10:11:05.194Z",
+  "generated": "2026-06-11T10:44:51.363Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "AI Threat to India’s New Middle Class: How Automation Is Reshaping IT Jobs, Gender Roles and Social Mobility",
-        "date": "2026-06-04T08:15:29Z",
-        "source": "GNews: Outlook India",
-        "link": "https://www.outlookindia.com/national/ai-threat-to-indias-new-middle-class-how-automation-is-reshaping-it-jobs-gender-roles-and-social-mobility"
-      },
-      {
-        "title": "Quote of the Day by Google DeepMind CEO Demis Hassabis: \"AI is going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster.\" Could AI transform civilization faster than human",
-        "date": "2026-06-01T23:37:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/international/us/quote-of-the-day-by-google-deepmind-ceo-demis-hassabis-ai-is-going-to-be-10-times-bigger-than-the-industrial-revolution-and-maybe-10-times-faster-could-ai-transform-civilization-faster-than-humanity-can-adapt-learn-why-pioneering-ai-researcher-demis-hassabis-believes-the-coming-ai-revolution-could-be-larger-and-faster-than-any-technological-shift-in-history/articleshow/131450035.cms"
-      },
-      {
-        "title": "No jobs apocalypse: Sam Altman says AI may not trigger the mass unemployment many feared",
-        "date": "2026-05-26T08:44:35Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/no-jobs-apocalypse-sam-altman-says-ai-may-not-trigger-the-mass-unemployment-many-feared-14015362.html"
-      },
-      {
-        "title": "74% Indian graduates fear AI may make jobs harder to secure, finance emerges as top career choice amid rising job concerns: Survey",
-        "date": "2026-05-25T13:10:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/education/news/74-indian-graduates-fear-ai-may-make-jobs-harder-to-secure-finance-emerges-as-top-career-choice-amid-rising-job-concerns-survey/articleshow/131310516.cms"
-      },
-      {
-        "title": "Bengaluru vegetable seller earning more than Rs 12 LPA? Man spots him wearing AI data-collection headgear, video stuns internet",
-        "date": "2026-05-21T05:24:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/new-updates/bengaluru-vegetable-seller-earning-more-than-rs-12-lpa-man-spots-him-wearing-ai-data-collection-headgear-video-stuns-internet/articleshow/131240045.cms"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "AI Threat to India’s New Middle Class: How Automation Is Reshaping IT Jobs, Gender Roles and Social Mobility",
-        "date": "2026-06-04T08:15:29Z",
-        "source": "GNews: Outlook India",
-        "link": "https://www.outlookindia.com/national/ai-threat-to-indias-new-middle-class-how-automation-is-reshaping-it-jobs-gender-roles-and-social-mobility"
-      },
-      {
-        "title": "Quote of the Day by Google DeepMind CEO Demis Hassabis: \"AI is going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster.\" Could AI transform civilization faster than human",
-        "date": "2026-06-01T23:37:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/international/us/quote-of-the-day-by-google-deepmind-ceo-demis-hassabis-ai-is-going-to-be-10-times-bigger-than-the-industrial-revolution-and-maybe-10-times-faster-could-ai-transform-civilization-faster-than-humanity-can-adapt-learn-why-pioneering-ai-researcher-demis-hassabis-believes-the-coming-ai-revolution-could-be-larger-and-faster-than-any-technological-shift-in-history/articleshow/131450035.cms"
-      },
-      {
-        "title": "No jobs apocalypse: Sam Altman says AI may not trigger the mass unemployment many feared",
-        "date": "2026-05-26T08:44:35Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/no-jobs-apocalypse-sam-altman-says-ai-may-not-trigger-the-mass-unemployment-many-feared-14015362.html"
-      },
-      {
-        "title": "74% Indian graduates fear AI may make jobs harder to secure, finance emerges as top career choice amid rising job concerns: Survey",
-        "date": "2026-05-25T13:10:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/education/news/74-indian-graduates-fear-ai-may-make-jobs-harder-to-secure-finance-emerges-as-top-career-choice-amid-rising-job-concerns-survey/articleshow/131310516.cms"
-      },
-      {
-        "title": "Bengaluru vegetable seller earning more than Rs 12 LPA? Man spots him wearing AI data-collection headgear, video stuns internet",
-        "date": "2026-05-21T05:24:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/new-updates/bengaluru-vegetable-seller-earning-more-than-rs-12-lpa-man-spots-him-wearing-ai-data-collection-headgear-video-stuns-internet/articleshow/131240045.cms"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
