@@ -1,7 +1,13 @@
 {
-  "generated": "2026-06-23T09:50:58.819Z",
+  "generated": "2026-06-24T09:38:37.267Z",
   "feeds": {
     "threat": [
+      {
+        "title": "AI Rewrites Oracle: 21,000 Jobs Cut As Cloud Wars Turn Fiercer, Tech Giants Double Down On Automation, Layoffs Signal New Rules; Will More People Lose Jobs To AI?",
+        "date": "2026-06-23T04:49:27Z",
+        "source": "GNews: NewsX",
+        "link": "https://www.newsx.com/business/ai-rewrites-oracle-layoffs-21000-jobs-cut-as-cloud-wars-turn-fiercer-tech-giants-double-down-on-automation-layoffs-signal-new-rules-will-more-people-lose-jobs-to-ai-239614/"
+      },
       {
         "title": "Which 5 Jobs Could Disappear In The Next 10 Years As AI Reshapes Workplaces Worldwide?",
         "date": "2026-06-14T13:48:09Z",
@@ -25,17 +31,17 @@
         "date": "2026-05-26T08:44:35Z",
         "source": "GNews: Firstpost",
         "link": "https://www.firstpost.com/tech/no-jobs-apocalypse-sam-altman-says-ai-may-not-trigger-the-mass-unemployment-many-feared-14015362.html"
-      },
-      {
-        "title": "74% Indian graduates fear AI may make jobs harder to secure, finance emerges as top career choice amid rising job concerns: Survey",
-        "date": "2026-05-25T13:10:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/education/news/74-indian-graduates-fear-ai-may-make-jobs-harder-to-secure-finance-emerges-as-top-career-choice-amid-rising-job-concerns-survey/articleshow/131310516.cms"
       }
     ],
     "hope": [],
     "obsolescence": [
       {
+        "title": "AI Rewrites Oracle: 21,000 Jobs Cut As Cloud Wars Turn Fiercer, Tech Giants Double Down On Automation, Layoffs Signal New Rules; Will More People Lose Jobs To AI?",
+        "date": "2026-06-23T04:49:27Z",
+        "source": "GNews: NewsX",
+        "link": "https://www.newsx.com/business/ai-rewrites-oracle-layoffs-21000-jobs-cut-as-cloud-wars-turn-fiercer-tech-giants-double-down-on-automation-layoffs-signal-new-rules-will-more-people-lose-jobs-to-ai-239614/"
+      },
+      {
         "title": "Which 5 Jobs Could Disappear In The Next 10 Years As AI Reshapes Workplaces Worldwide?",
         "date": "2026-06-14T13:48:09Z",
         "source": "GNews: NewsX",
@@ -58,12 +64,6 @@
         "date": "2026-05-26T08:44:35Z",
         "source": "GNews: Firstpost",
         "link": "https://www.firstpost.com/tech/no-jobs-apocalypse-sam-altman-says-ai-may-not-trigger-the-mass-unemployment-many-feared-14015362.html"
-      },
-      {
-        "title": "74% Indian graduates fear AI may make jobs harder to secure, finance emerges as top career choice amid rising job concerns: Survey",
-        "date": "2026-05-25T13:10:00Z",
-        "source": "GNews: Times of India",
-        "link": "https://timesofindia.indiatimes.com/education/news/74-indian-graduates-fear-ai-may-make-jobs-harder-to-secure-finance-emerges-as-top-career-choice-amid-rising-job-concerns-survey/articleshow/131310516.cms"
       }
     ],
     "abundance": []
