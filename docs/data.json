@@ -1,71 +1,9 @@
 {
-  "generated": "2026-06-24T09:38:37.267Z",
+  "generated": "2026-06-25T09:30:15.383Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "AI Rewrites Oracle: 21,000 Jobs Cut As Cloud Wars Turn Fiercer, Tech Giants Double Down On Automation, Layoffs Signal New Rules; Will More People Lose Jobs To AI?",
-        "date": "2026-06-23T04:49:27Z",
-        "source": "GNews: NewsX",
-        "link": "https://www.newsx.com/business/ai-rewrites-oracle-layoffs-21000-jobs-cut-as-cloud-wars-turn-fiercer-tech-giants-double-down-on-automation-layoffs-signal-new-rules-will-more-people-lose-jobs-to-ai-239614/"
-      },
-      {
-        "title": "Which 5 Jobs Could Disappear In The Next 10 Years As AI Reshapes Workplaces Worldwide?",
-        "date": "2026-06-14T13:48:09Z",
-        "source": "GNews: NewsX",
-        "link": "https://www.newsx.com/lifestyle/which-5-jobs-could-disappear-in-the-next-10-years-as-ai-reshapes-workplaces-worldwide-234175/"
-      },
-      {
-        "title": "AI Threat to India’s New Middle Class: How Automation Is Reshaping IT Jobs, Gender Roles and Social Mobility",
-        "date": "2026-06-04T08:15:29Z",
-        "source": "GNews: Outlook India",
-        "link": "https://www.outlookindia.com/national/ai-threat-to-indias-new-middle-class-how-automation-is-reshaping-it-jobs-gender-roles-and-social-mobility"
-      },
-      {
-        "title": "Quote of the Day by Google DeepMind CEO Demis Hassabis: \"AI is going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster.\" Could AI transform civilization faster than human",
-        "date": "2026-06-01T23:37:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/international/us/quote-of-the-day-by-google-deepmind-ceo-demis-hassabis-ai-is-going-to-be-10-times-bigger-than-the-industrial-revolution-and-maybe-10-times-faster-could-ai-transform-civilization-faster-than-humanity-can-adapt-learn-why-pioneering-ai-researcher-demis-hassabis-believes-the-coming-ai-revolution-could-be-larger-and-faster-than-any-technological-shift-in-history/articleshow/131450035.cms"
-      },
-      {
-        "title": "No jobs apocalypse: Sam Altman says AI may not trigger the mass unemployment many feared",
-        "date": "2026-05-26T08:44:35Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/no-jobs-apocalypse-sam-altman-says-ai-may-not-trigger-the-mass-unemployment-many-feared-14015362.html"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "AI Rewrites Oracle: 21,000 Jobs Cut As Cloud Wars Turn Fiercer, Tech Giants Double Down On Automation, Layoffs Signal New Rules; Will More People Lose Jobs To AI?",
-        "date": "2026-06-23T04:49:27Z",
-        "source": "GNews: NewsX",
-        "link": "https://www.newsx.com/business/ai-rewrites-oracle-layoffs-21000-jobs-cut-as-cloud-wars-turn-fiercer-tech-giants-double-down-on-automation-layoffs-signal-new-rules-will-more-people-lose-jobs-to-ai-239614/"
-      },
-      {
-        "title": "Which 5 Jobs Could Disappear In The Next 10 Years As AI Reshapes Workplaces Worldwide?",
-        "date": "2026-06-14T13:48:09Z",
-        "source": "GNews: NewsX",
-        "link": "https://www.newsx.com/lifestyle/which-5-jobs-could-disappear-in-the-next-10-years-as-ai-reshapes-workplaces-worldwide-234175/"
-      },
-      {
-        "title": "AI Threat to India’s New Middle Class: How Automation Is Reshaping IT Jobs, Gender Roles and Social Mobility",
-        "date": "2026-06-04T08:15:29Z",
-        "source": "GNews: Outlook India",
-        "link": "https://www.outlookindia.com/national/ai-threat-to-indias-new-middle-class-how-automation-is-reshaping-it-jobs-gender-roles-and-social-mobility"
-      },
-      {
-        "title": "Quote of the Day by Google DeepMind CEO Demis Hassabis: \"AI is going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster.\" Could AI transform civilization faster than human",
-        "date": "2026-06-01T23:37:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/international/us/quote-of-the-day-by-google-deepmind-ceo-demis-hassabis-ai-is-going-to-be-10-times-bigger-than-the-industrial-revolution-and-maybe-10-times-faster-could-ai-transform-civilization-faster-than-humanity-can-adapt-learn-why-pioneering-ai-researcher-demis-hassabis-believes-the-coming-ai-revolution-could-be-larger-and-faster-than-any-technological-shift-in-history/articleshow/131450035.cms"
-      },
-      {
-        "title": "No jobs apocalypse: Sam Altman says AI may not trigger the mass unemployment many feared",
-        "date": "2026-05-26T08:44:35Z",
-        "source": "GNews: Firstpost",
-        "link": "https://www.firstpost.com/tech/no-jobs-apocalypse-sam-altman-says-ai-may-not-trigger-the-mass-unemployment-many-feared-14015362.html"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
