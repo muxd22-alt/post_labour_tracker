@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-01T09:57:18.904Z",
+  "generated": "2026-07-02T09:19:52.454Z",
   "feeds": {
     "threat": [
       {
@@ -25,12 +25,6 @@
         "date": "2026-06-04T08:15:29Z",
         "source": "GNews: Outlook India",
         "link": "https://www.outlookindia.com/national/ai-threat-to-indias-new-middle-class-how-automation-is-reshaping-it-jobs-gender-roles-and-social-mobility"
-      },
-      {
-        "title": "Quote of the Day by Google DeepMind CEO Demis Hassabis: \"AI is going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster.\" Could AI transform civilization faster than human",
-        "date": "2026-06-01T23:37:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/international/us/quote-of-the-day-by-google-deepmind-ceo-demis-hassabis-ai-is-going-to-be-10-times-bigger-than-the-industrial-revolution-and-maybe-10-times-faster-could-ai-transform-civilization-faster-than-humanity-can-adapt-learn-why-pioneering-ai-researcher-demis-hassabis-believes-the-coming-ai-revolution-could-be-larger-and-faster-than-any-technological-shift-in-history/articleshow/131450035.cms"
       }
     ],
     "hope": [],
@@ -58,12 +52,6 @@
         "date": "2026-06-04T08:15:29Z",
         "source": "GNews: Outlook India",
         "link": "https://www.outlookindia.com/national/ai-threat-to-indias-new-middle-class-how-automation-is-reshaping-it-jobs-gender-roles-and-social-mobility"
-      },
-      {
-        "title": "Quote of the Day by Google DeepMind CEO Demis Hassabis: \"AI is going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster.\" Could AI transform civilization faster than human",
-        "date": "2026-06-01T23:37:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/international/us/quote-of-the-day-by-google-deepmind-ceo-demis-hassabis-ai-is-going-to-be-10-times-bigger-than-the-industrial-revolution-and-maybe-10-times-faster-could-ai-transform-civilization-faster-than-humanity-can-adapt-learn-why-pioneering-ai-researcher-demis-hassabis-believes-the-coming-ai-revolution-could-be-larger-and-faster-than-any-technological-shift-in-history/articleshow/131450035.cms"
       }
     ],
     "abundance": []
