@@ -1,35 +1,9 @@
 {
-  "generated": "2026-07-26T08:32:16.120Z",
+  "generated": "2026-07-27T09:58:29.181Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "7,700 jobs down: India’s top private banks’ workforce reduce as tech wonder gets busy",
-        "date": "2026-07-14T07:35:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indias-top-banks-cut-7700-jobs-the-rise-of-automation-and-ai-in-banking-workforce/articleshow/132361791.cms"
-      },
-      {
-        "title": "Tech layoffs 2026 full list: Over 1 lakh jobs cut as AI reshapes workforce",
-        "date": "2026-06-29T12:11:37Z",
-        "source": "GNews: India Today",
-        "link": "https://www.indiatoday.in/jobs/story/tech-layoffs-2026-full-list-over-1-lakh-jobs-cut-as-ai-reshapes-workforce-educ-2936437-2026-06-29"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "7,700 jobs down: India’s top private banks’ workforce reduce as tech wonder gets busy",
-        "date": "2026-07-14T07:35:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indias-top-banks-cut-7700-jobs-the-rise-of-automation-and-ai-in-banking-workforce/articleshow/132361791.cms"
-      },
-      {
-        "title": "Tech layoffs 2026 full list: Over 1 lakh jobs cut as AI reshapes workforce",
-        "date": "2026-06-29T12:11:37Z",
-        "source": "GNews: India Today",
-        "link": "https://www.indiatoday.in/jobs/story/tech-layoffs-2026-full-list-over-1-lakh-jobs-cut-as-ai-reshapes-workforce-educ-2936437-2026-06-29"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
