@@ -1,9 +1,47 @@
 {
-  "generated": "2026-08-02T08:29:07.366Z",
+  "generated": "2026-08-03T09:53:48.733Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "AI, data centre costs are slowing IT hiring, Zoho founder Sridhar Vembu",
+        "date": "2026-08-02T11:47:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/it-industry-not-creating-new-jobs-funds-diverted-to-ai-data-centre-costs-sridhar-vembu/articleshow/132805978.cms"
+      },
+      {
+        "title": "Visa to lay off 7% of workforce, cutting 2,600 jobs as payments giant restructures amid AI",
+        "date": "2026-07-28T14:48:28Z",
+        "source": "GNews: TechStartups.com",
+        "link": "https://techstartups.com/2026/07/28/visa-to-lay-off-7-of-workforce-cutting-2600-jobs-as-payments-giant-restructures-amid-ai-driven-efficiency-push/"
+      },
+      {
+        "title": "7,700 jobs down: India’s top private banks’ workforce reduce as tech wonder gets busy",
+        "date": "2026-07-14T07:35:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indias-top-banks-cut-7700-jobs-the-rise-of-automation-and-ai-in-banking-workforce/articleshow/132361791.cms"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "AI, data centre costs are slowing IT hiring, Zoho founder Sridhar Vembu",
+        "date": "2026-08-02T11:47:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/it-industry-not-creating-new-jobs-funds-diverted-to-ai-data-centre-costs-sridhar-vembu/articleshow/132805978.cms"
+      },
+      {
+        "title": "Visa to lay off 7% of workforce, cutting 2,600 jobs as payments giant restructures amid AI",
+        "date": "2026-07-28T14:48:28Z",
+        "source": "GNews: TechStartups.com",
+        "link": "https://techstartups.com/2026/07/28/visa-to-lay-off-7-of-workforce-cutting-2600-jobs-as-payments-giant-restructures-amid-ai-driven-efficiency-push/"
+      },
+      {
+        "title": "7,700 jobs down: India’s top private banks’ workforce reduce as tech wonder gets busy",
+        "date": "2026-07-14T07:35:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indias-top-banks-cut-7700-jobs-the-rise-of-automation-and-ai-in-banking-workforce/articleshow/132361791.cms"
+      }
+    ],
     "abundance": []
   },
   "ai": null
