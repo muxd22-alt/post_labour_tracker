@@ -1,9 +1,71 @@
 {
-  "generated": "2026-08-05T08:41:54.419Z",
+  "generated": "2026-08-06T08:43:40.256Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "Can AI Help Poorer Nations Leapfrog a Century of Progress?",
+        "date": "2026-08-05T15:04:48Z",
+        "source": "GNews: Devdiscourse",
+        "link": "https://www.devdiscourse.com/article/business/3959805-can-ai-help-poorer-nations-leapfrog-a-century-of-progress"
+      },
+      {
+        "title": "AI can lift developing economies in a decade, but only if they build the basics now: World Bank",
+        "date": "2026-08-04T16:06:16Z",
+        "source": "GNews: Moneycontrol",
+        "link": "https://www.moneycontrol.com/news/business/economy/ai-can-lift-developing-economies-in-a-decade-but-only-if-they-build-the-basics-now-world-bank-13994377.html"
+      },
+      {
+        "title": "AI, data centre costs are slowing IT hiring, Zoho founder Sridhar Vembu",
+        "date": "2026-08-02T11:47:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/it-industry-not-creating-new-jobs-funds-diverted-to-ai-data-centre-costs-sridhar-vembu/articleshow/132805978.cms"
+      },
+      {
+        "title": "Visa to lay off 7% of workforce, cutting 2,600 jobs as payments giant restructures amid AI",
+        "date": "2026-07-28T14:48:28Z",
+        "source": "GNews: TechStartups.com",
+        "link": "https://techstartups.com/2026/07/28/visa-to-lay-off-7-of-workforce-cutting-2600-jobs-as-payments-giant-restructures-amid-ai-driven-efficiency-push/"
+      },
+      {
+        "title": "7,700 jobs down: India’s top private banks’ workforce reduce as tech wonder gets busy",
+        "date": "2026-07-14T07:35:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indias-top-banks-cut-7700-jobs-the-rise-of-automation-and-ai-in-banking-workforce/articleshow/132361791.cms"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "Can AI Help Poorer Nations Leapfrog a Century of Progress?",
+        "date": "2026-08-05T15:04:48Z",
+        "source": "GNews: Devdiscourse",
+        "link": "https://www.devdiscourse.com/article/business/3959805-can-ai-help-poorer-nations-leapfrog-a-century-of-progress"
+      },
+      {
+        "title": "AI can lift developing economies in a decade, but only if they build the basics now: World Bank",
+        "date": "2026-08-04T16:06:16Z",
+        "source": "GNews: Moneycontrol",
+        "link": "https://www.moneycontrol.com/news/business/economy/ai-can-lift-developing-economies-in-a-decade-but-only-if-they-build-the-basics-now-world-bank-13994377.html"
+      },
+      {
+        "title": "AI, data centre costs are slowing IT hiring, Zoho founder Sridhar Vembu",
+        "date": "2026-08-02T11:47:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/it-industry-not-creating-new-jobs-funds-diverted-to-ai-data-centre-costs-sridhar-vembu/articleshow/132805978.cms"
+      },
+      {
+        "title": "Visa to lay off 7% of workforce, cutting 2,600 jobs as payments giant restructures amid AI",
+        "date": "2026-07-28T14:48:28Z",
+        "source": "GNews: TechStartups.com",
+        "link": "https://techstartups.com/2026/07/28/visa-to-lay-off-7-of-workforce-cutting-2600-jobs-as-payments-giant-restructures-amid-ai-driven-efficiency-push/"
+      },
+      {
+        "title": "7,700 jobs down: India’s top private banks’ workforce reduce as tech wonder gets busy",
+        "date": "2026-07-14T07:35:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indias-top-banks-cut-7700-jobs-the-rise-of-automation-and-ai-in-banking-workforce/articleshow/132361791.cms"
+      }
+    ],
     "abundance": []
   },
   "ai": null
