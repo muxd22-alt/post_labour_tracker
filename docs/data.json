@@ -1,7 +1,19 @@
 {
-  "generated": "2026-08-06T08:43:40.256Z",
+  "generated": "2026-08-07T07:22:02.142Z",
   "feeds": {
     "threat": [
+      {
+        "title": "Small companies to create jobs in India in future, AI may make big firms net job losers: Nilekani",
+        "date": "2026-08-06T15:15:16Z",
+        "source": "GNews: The Tribune",
+        "link": "https://www.tribuneindia.com/news/business/small-companies-to-create-jobs-in-india-in-future-ai-may-make-big-firms-net-job-losers-nilekani/"
+      },
+      {
+        "title": "AI Could Turn Large Companies Into Net Job Losers While Small Businesses Create Jobs, Says Nandan Nilekani",
+        "date": "2026-08-06T11:15:50Z",
+        "source": "GNews: Outlook Business",
+        "link": "https://www.outlookbusiness.com/corporate/ai-could-turn-large-companies-into-net-job-losers-while-small-businesses-create-jobs-says-nandan-nilekani"
+      },
       {
         "title": "Can AI Help Poorer Nations Leapfrog a Century of Progress?",
         "date": "2026-08-05T15:04:48Z",
@@ -19,23 +31,23 @@
         "date": "2026-08-02T11:47:00Z",
         "source": "GNews: The Economic Times",
         "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/it-industry-not-creating-new-jobs-funds-diverted-to-ai-data-centre-costs-sridhar-vembu/articleshow/132805978.cms"
-      },
-      {
-        "title": "Visa to lay off 7% of workforce, cutting 2,600 jobs as payments giant restructures amid AI",
-        "date": "2026-07-28T14:48:28Z",
-        "source": "GNews: TechStartups.com",
-        "link": "https://techstartups.com/2026/07/28/visa-to-lay-off-7-of-workforce-cutting-2600-jobs-as-payments-giant-restructures-amid-ai-driven-efficiency-push/"
-      },
-      {
-        "title": "7,700 jobs down: India’s top private banks’ workforce reduce as tech wonder gets busy",
-        "date": "2026-07-14T07:35:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indias-top-banks-cut-7700-jobs-the-rise-of-automation-and-ai-in-banking-workforce/articleshow/132361791.cms"
       }
     ],
     "hope": [],
     "obsolescence": [
       {
+        "title": "Small companies to create jobs in India in future, AI may make big firms net job losers: Nilekani",
+        "date": "2026-08-06T15:15:16Z",
+        "source": "GNews: The Tribune",
+        "link": "https://www.tribuneindia.com/news/business/small-companies-to-create-jobs-in-india-in-future-ai-may-make-big-firms-net-job-losers-nilekani/"
+      },
+      {
+        "title": "AI Could Turn Large Companies Into Net Job Losers While Small Businesses Create Jobs, Says Nandan Nilekani",
+        "date": "2026-08-06T11:15:50Z",
+        "source": "GNews: Outlook Business",
+        "link": "https://www.outlookbusiness.com/corporate/ai-could-turn-large-companies-into-net-job-losers-while-small-businesses-create-jobs-says-nandan-nilekani"
+      },
+      {
         "title": "Can AI Help Poorer Nations Leapfrog a Century of Progress?",
         "date": "2026-08-05T15:04:48Z",
         "source": "GNews: Devdiscourse",
@@ -52,18 +64,6 @@
         "date": "2026-08-02T11:47:00Z",
         "source": "GNews: The Economic Times",
         "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/it-industry-not-creating-new-jobs-funds-diverted-to-ai-data-centre-costs-sridhar-vembu/articleshow/132805978.cms"
-      },
-      {
-        "title": "Visa to lay off 7% of workforce, cutting 2,600 jobs as payments giant restructures amid AI",
-        "date": "2026-07-28T14:48:28Z",
-        "source": "GNews: TechStartups.com",
-        "link": "https://techstartups.com/2026/07/28/visa-to-lay-off-7-of-workforce-cutting-2600-jobs-as-payments-giant-restructures-amid-ai-driven-efficiency-push/"
-      },
-      {
-        "title": "7,700 jobs down: India’s top private banks’ workforce reduce as tech wonder gets busy",
-        "date": "2026-07-14T07:35:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indias-top-banks-cut-7700-jobs-the-rise-of-automation-and-ai-in-banking-workforce/articleshow/132361791.cms"
       }
     ],
     "abundance": []
