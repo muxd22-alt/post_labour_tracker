@@ -1,71 +1,9 @@
 {
-  "generated": "2026-08-15T06:44:33.019Z",
+  "generated": "2026-08-16T06:46:21.900Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "Small companies to create jobs in India in future, AI may make big firms net job losers: Nilekani",
-        "date": "2026-08-06T15:15:16Z",
-        "source": "GNews: The Tribune",
-        "link": "https://www.tribuneindia.com/news/business/small-companies-to-create-jobs-in-india-in-future-ai-may-make-big-firms-net-job-losers-nilekani/"
-      },
-      {
-        "title": "AI Could Turn Large Companies Into Net Job Losers While Small Businesses Create Jobs, Says Nandan Nilekani",
-        "date": "2026-08-06T11:15:50Z",
-        "source": "GNews: Outlook Business",
-        "link": "https://www.outlookbusiness.com/corporate/ai-could-turn-large-companies-into-net-job-losers-while-small-businesses-create-jobs-says-nandan-nilekani"
-      },
-      {
-        "title": "Can AI Help Poorer Nations Leapfrog a Century of Progress?",
-        "date": "2026-08-05T15:04:48Z",
-        "source": "GNews: Devdiscourse",
-        "link": "https://www.devdiscourse.com/article/business/3959805-can-ai-help-poorer-nations-leapfrog-a-century-of-progress"
-      },
-      {
-        "title": "AI can lift developing economies in a decade, but only if they build the basics now: World Bank",
-        "date": "2026-08-04T16:06:16Z",
-        "source": "GNews: Moneycontrol",
-        "link": "https://www.moneycontrol.com/news/business/economy/ai-can-lift-developing-economies-in-a-decade-but-only-if-they-build-the-basics-now-world-bank-13994377.html"
-      },
-      {
-        "title": "AI, data centre costs are slowing IT hiring, Zoho founder Sridhar Vembu",
-        "date": "2026-08-02T11:47:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/it-industry-not-creating-new-jobs-funds-diverted-to-ai-data-centre-costs-sridhar-vembu/articleshow/132805978.cms"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "Small companies to create jobs in India in future, AI may make big firms net job losers: Nilekani",
-        "date": "2026-08-06T15:15:16Z",
-        "source": "GNews: The Tribune",
-        "link": "https://www.tribuneindia.com/news/business/small-companies-to-create-jobs-in-india-in-future-ai-may-make-big-firms-net-job-losers-nilekani/"
-      },
-      {
-        "title": "AI Could Turn Large Companies Into Net Job Losers While Small Businesses Create Jobs, Says Nandan Nilekani",
-        "date": "2026-08-06T11:15:50Z",
-        "source": "GNews: Outlook Business",
-        "link": "https://www.outlookbusiness.com/corporate/ai-could-turn-large-companies-into-net-job-losers-while-small-businesses-create-jobs-says-nandan-nilekani"
-      },
-      {
-        "title": "Can AI Help Poorer Nations Leapfrog a Century of Progress?",
-        "date": "2026-08-05T15:04:48Z",
-        "source": "GNews: Devdiscourse",
-        "link": "https://www.devdiscourse.com/article/business/3959805-can-ai-help-poorer-nations-leapfrog-a-century-of-progress"
-      },
-      {
-        "title": "AI can lift developing economies in a decade, but only if they build the basics now: World Bank",
-        "date": "2026-08-04T16:06:16Z",
-        "source": "GNews: Moneycontrol",
-        "link": "https://www.moneycontrol.com/news/business/economy/ai-can-lift-developing-economies-in-a-decade-but-only-if-they-build-the-basics-now-world-bank-13994377.html"
-      },
-      {
-        "title": "AI, data centre costs are slowing IT hiring, Zoho founder Sridhar Vembu",
-        "date": "2026-08-02T11:47:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/it-industry-not-creating-new-jobs-funds-diverted-to-ai-data-centre-costs-sridhar-vembu/articleshow/132805978.cms"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
