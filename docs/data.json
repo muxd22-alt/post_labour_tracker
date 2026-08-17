@@ -1,9 +1,71 @@
 {
-  "generated": "2026-08-16T06:46:21.900Z",
+  "generated": "2026-08-17T07:03:01.492Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "Young Korean workers hit hardest as AI automation slashes jobs",
+        "date": "2026-08-16T07:16:03Z",
+        "source": "GNews: The Korea Times",
+        "link": "https://www.koreatimes.co.kr/economy/20260816/young-korean-workers-hit-hardest-as-ai-automation-slashes-jobs"
+      },
+      {
+        "title": "Young workers hit hardest as AI automation slashes jobs in Korea",
+        "date": "2026-08-16T07:16:03Z",
+        "source": "GNews: The Korea Times",
+        "link": "https://www.koreatimes.co.kr/economy/20260816/young-workers-hit-hardest-as-ai-automation-slashes-jobs-in-korea"
+      },
+      {
+        "title": "Small companies to create jobs in India in future, AI may make big firms net job losers: Nilekani",
+        "date": "2026-08-06T15:15:16Z",
+        "source": "GNews: The Tribune",
+        "link": "https://www.tribuneindia.com/news/business/small-companies-to-create-jobs-in-india-in-future-ai-may-make-big-firms-net-job-losers-nilekani/"
+      },
+      {
+        "title": "AI Could Turn Large Companies Into Net Job Losers While Small Businesses Create Jobs, Says Nandan Nilekani",
+        "date": "2026-08-06T11:15:50Z",
+        "source": "GNews: Outlook Business",
+        "link": "https://www.outlookbusiness.com/corporate/ai-could-turn-large-companies-into-net-job-losers-while-small-businesses-create-jobs-says-nandan-nilekani"
+      },
+      {
+        "title": "Can AI Help Poorer Nations Leapfrog a Century of Progress?",
+        "date": "2026-08-05T15:04:48Z",
+        "source": "GNews: Devdiscourse",
+        "link": "https://www.devdiscourse.com/article/business/3959805-can-ai-help-poorer-nations-leapfrog-a-century-of-progress"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "Young Korean workers hit hardest as AI automation slashes jobs",
+        "date": "2026-08-16T07:16:03Z",
+        "source": "GNews: The Korea Times",
+        "link": "https://www.koreatimes.co.kr/economy/20260816/young-korean-workers-hit-hardest-as-ai-automation-slashes-jobs"
+      },
+      {
+        "title": "Young workers hit hardest as AI automation slashes jobs in Korea",
+        "date": "2026-08-16T07:16:03Z",
+        "source": "GNews: The Korea Times",
+        "link": "https://www.koreatimes.co.kr/economy/20260816/young-workers-hit-hardest-as-ai-automation-slashes-jobs-in-korea"
+      },
+      {
+        "title": "Small companies to create jobs in India in future, AI may make big firms net job losers: Nilekani",
+        "date": "2026-08-06T15:15:16Z",
+        "source": "GNews: The Tribune",
+        "link": "https://www.tribuneindia.com/news/business/small-companies-to-create-jobs-in-india-in-future-ai-may-make-big-firms-net-job-losers-nilekani/"
+      },
+      {
+        "title": "AI Could Turn Large Companies Into Net Job Losers While Small Businesses Create Jobs, Says Nandan Nilekani",
+        "date": "2026-08-06T11:15:50Z",
+        "source": "GNews: Outlook Business",
+        "link": "https://www.outlookbusiness.com/corporate/ai-could-turn-large-companies-into-net-job-losers-while-small-businesses-create-jobs-says-nandan-nilekani"
+      },
+      {
+        "title": "Can AI Help Poorer Nations Leapfrog a Century of Progress?",
+        "date": "2026-08-05T15:04:48Z",
+        "source": "GNews: Devdiscourse",
+        "link": "https://www.devdiscourse.com/article/business/3959805-can-ai-help-poorer-nations-leapfrog-a-century-of-progress"
+      }
+    ],
     "abundance": []
   },
   "ai": null
