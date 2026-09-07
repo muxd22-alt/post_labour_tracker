@@ -1,35 +1,9 @@
 {
-  "generated": "2026-09-06T10:36:34.903Z",
+  "generated": "2026-09-07T12:01:53.196Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "Young Korean workers hit hardest as AI automation slashes jobs",
-        "date": "2026-08-16T07:16:03Z",
-        "source": "GNews: The Korea Times",
-        "link": "https://www.koreatimes.co.kr/economy/20260816/young-korean-workers-hit-hardest-as-ai-automation-slashes-jobs"
-      },
-      {
-        "title": "Young workers hit hardest as AI automation slashes jobs in Korea",
-        "date": "2026-08-16T07:16:03Z",
-        "source": "GNews: The Korea Times",
-        "link": "https://www.koreatimes.co.kr/economy/20260816/young-workers-hit-hardest-as-ai-automation-slashes-jobs-in-korea"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "Young Korean workers hit hardest as AI automation slashes jobs",
-        "date": "2026-08-16T07:16:03Z",
-        "source": "GNews: The Korea Times",
-        "link": "https://www.koreatimes.co.kr/economy/20260816/young-korean-workers-hit-hardest-as-ai-automation-slashes-jobs"
-      },
-      {
-        "title": "Young workers hit hardest as AI automation slashes jobs in Korea",
-        "date": "2026-08-16T07:16:03Z",
-        "source": "GNews: The Korea Times",
-        "link": "https://www.koreatimes.co.kr/economy/20260816/young-workers-hit-hardest-as-ai-automation-slashes-jobs-in-korea"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
