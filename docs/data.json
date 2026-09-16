@@ -1,47 +1,9 @@
 {
-  "generated": "2026-09-15T11:25:18.577Z",
+  "generated": "2026-09-16T11:10:48.553Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "Global Fintech Fest 2026: Nandan Nilekani says risk of losing jobs due to AI lower in small companies",
-        "date": "2026-09-10T08:58:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/jobs/hr-policies-trends/nandan-nilekani-advocates-for-millions-of-small-firms-to-combat-ai-job-risks-at-global-fintech-fest-2026/articleshow/134001134.cms"
-      },
-      {
-        "title": "Young Korean workers hit hardest as AI automation slashes jobs",
-        "date": "2026-08-16T07:16:03Z",
-        "source": "GNews: The Korea Times",
-        "link": "https://www.koreatimes.co.kr/economy/20260816/young-korean-workers-hit-hardest-as-ai-automation-slashes-jobs"
-      },
-      {
-        "title": "Young workers hit hardest as AI automation slashes jobs in Korea",
-        "date": "2026-08-16T07:16:03Z",
-        "source": "GNews: The Korea Times",
-        "link": "https://www.koreatimes.co.kr/economy/20260816/young-workers-hit-hardest-as-ai-automation-slashes-jobs-in-korea"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "Global Fintech Fest 2026: Nandan Nilekani says risk of losing jobs due to AI lower in small companies",
-        "date": "2026-09-10T08:58:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/jobs/hr-policies-trends/nandan-nilekani-advocates-for-millions-of-small-firms-to-combat-ai-job-risks-at-global-fintech-fest-2026/articleshow/134001134.cms"
-      },
-      {
-        "title": "Young Korean workers hit hardest as AI automation slashes jobs",
-        "date": "2026-08-16T07:16:03Z",
-        "source": "GNews: The Korea Times",
-        "link": "https://www.koreatimes.co.kr/economy/20260816/young-korean-workers-hit-hardest-as-ai-automation-slashes-jobs"
-      },
-      {
-        "title": "Young workers hit hardest as AI automation slashes jobs in Korea",
-        "date": "2026-08-16T07:16:03Z",
-        "source": "GNews: The Korea Times",
-        "link": "https://www.koreatimes.co.kr/economy/20260816/young-workers-hit-hardest-as-ai-automation-slashes-jobs-in-korea"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
