@@ -1,9 +1,23 @@
 {
-  "generated": "2026-09-20T10:59:16.540Z",
+  "generated": "2026-09-21T12:25:22.101Z",
   "feeds": {
-    "threat": [],
+    "threat": [
+      {
+        "title": "Global Fintech Fest 2026: Nandan Nilekani says risk of losing jobs due to AI lower in small companies",
+        "date": "2026-09-10T08:58:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/jobs/hr-policies-trends/nandan-nilekani-advocates-for-millions-of-small-firms-to-combat-ai-job-risks-at-global-fintech-fest-2026/articleshow/134001134.cms"
+      }
+    ],
     "hope": [],
-    "obsolescence": [],
+    "obsolescence": [
+      {
+        "title": "Global Fintech Fest 2026: Nandan Nilekani says risk of losing jobs due to AI lower in small companies",
+        "date": "2026-09-10T08:58:00Z",
+        "source": "GNews: The Economic Times",
+        "link": "https://economictimes.indiatimes.com/jobs/hr-policies-trends/nandan-nilekani-advocates-for-millions-of-small-firms-to-combat-ai-job-risks-at-global-fintech-fest-2026/articleshow/134001134.cms"
+      }
+    ],
     "abundance": []
   },
   "ai": null
