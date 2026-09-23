@@ -1,59 +1,9 @@
 {
-  "generated": "2026-09-22T11:15:33.891Z",
+  "generated": "2026-09-23T11:08:17.153Z",
   "feeds": {
-    "threat": [
-      {
-        "title": "AI hiring headwinds hit white-collar roles first, spare blue-collar labour for now: Goldman Sachs Report",
-        "date": "2026-09-21T15:03:24Z",
-        "source": "GNews: Devdiscourse",
-        "link": "https://www.devdiscourse.com/article/business/3980060-ai-hiring-headwinds-hit-white-collar-roles-first-spare-blue-collar-labour-for-now-goldman-sachs-report"
-      },
-      {
-        "title": "collar labour for now: Goldman Sachs Report",
-        "date": "2026-09-21T15:02:31Z",
-        "source": "GNews: The Tribune",
-        "link": "https://www.tribuneindia.com/news/business/ai-hiring-headwinds-hit-white-collar-roles-first-spare-blue-collar-labour-for-now-goldman-sachs-report/"
-      },
-      {
-        "title": "AI hiring headwinds hit white-collar roles first, spare blue-collar labour for now: Goldman Sachs Report",
-        "date": "2026-09-21T14:59:12Z",
-        "source": "GNews: ANI (Asian News International)",
-        "link": "https://www.aninews.in/news/business/ai-hiring-headwinds-hit-white-collar-roles-first-spare-blue-collar-labour-for-now-goldman-sachs-report20260921202912/"
-      },
-      {
-        "title": "Global Fintech Fest 2026: Nandan Nilekani says risk of losing jobs due to AI lower in small companies",
-        "date": "2026-09-10T08:58:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/jobs/hr-policies-trends/nandan-nilekani-advocates-for-millions-of-small-firms-to-combat-ai-job-risks-at-global-fintech-fest-2026/articleshow/134001134.cms"
-      }
-    ],
+    "threat": [],
     "hope": [],
-    "obsolescence": [
-      {
-        "title": "AI hiring headwinds hit white-collar roles first, spare blue-collar labour for now: Goldman Sachs Report",
-        "date": "2026-09-21T15:03:24Z",
-        "source": "GNews: Devdiscourse",
-        "link": "https://www.devdiscourse.com/article/business/3980060-ai-hiring-headwinds-hit-white-collar-roles-first-spare-blue-collar-labour-for-now-goldman-sachs-report"
-      },
-      {
-        "title": "collar labour for now: Goldman Sachs Report",
-        "date": "2026-09-21T15:02:31Z",
-        "source": "GNews: The Tribune",
-        "link": "https://www.tribuneindia.com/news/business/ai-hiring-headwinds-hit-white-collar-roles-first-spare-blue-collar-labour-for-now-goldman-sachs-report/"
-      },
-      {
-        "title": "AI hiring headwinds hit white-collar roles first, spare blue-collar labour for now: Goldman Sachs Report",
-        "date": "2026-09-21T14:59:12Z",
-        "source": "GNews: ANI (Asian News International)",
-        "link": "https://www.aninews.in/news/business/ai-hiring-headwinds-hit-white-collar-roles-first-spare-blue-collar-labour-for-now-goldman-sachs-report20260921202912/"
-      },
-      {
-        "title": "Global Fintech Fest 2026: Nandan Nilekani says risk of losing jobs due to AI lower in small companies",
-        "date": "2026-09-10T08:58:00Z",
-        "source": "GNews: The Economic Times",
-        "link": "https://economictimes.indiatimes.com/jobs/hr-policies-trends/nandan-nilekani-advocates-for-millions-of-small-firms-to-combat-ai-job-risks-at-global-fintech-fest-2026/articleshow/134001134.cms"
-      }
-    ],
+    "obsolescence": [],
     "abundance": []
   },
   "ai": null
